@@ -1,12 +1,15 @@
 name: Test
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**/*.swift'
+      - '.github/workflows/main.yml'
   pull_request:
     paths:
       - '**/*.swift'
+      - '.github/workflows/main.yml'
 
 jobs:
   Tests:
