@@ -2,6 +2,7 @@
 // NO animations, NO withAnimation. State changes are instant.
 import SwiftUI
 import Defaults
+import KeyboardShortcuts
 
 struct MenuDropdownView: View {
     let events: [MBEvent]
@@ -56,8 +57,8 @@ struct MenuDropdownView: View {
                 bookmarksSection
             }
             MenuSeparator()
-            ActionRowView(icon: "video",  label: "Join next event meeting", kbd: "⌘K", action: onJoinNext)
-            ActionRowView(icon: "plus",   label: "Create meeting",           kbd: "⌘L", action: onCreateMeeting)
+            ActionRowView(icon: "video",  label: "Join next event meeting", kbd: kbd(for: .joinEventShortcut), action: onJoinNext)
+            ActionRowView(icon: "plus",   label: "Create meeting",           kbd: kbd(for: .createMeetingShortcut), action: onCreateMeeting)
             MenuSeparator()
             ActionRowView(icon: "gear",   label: "Preferences…",             kbd: "⌘,", action: onPreferences)
             ActionRowView(icon: "power",  label: "Quit MeetingBar",          kbd: "⌘Q", action: onQuit)
@@ -119,6 +120,10 @@ struct MenuDropdownView: View {
                 }
             }
 
+            if nowEvents.isEmpty && upcomingEvents.isEmpty {
+                EmptyStateView(kind: .allClear)
+            }
+
             if !pastEvents.isEmpty {
                 Spacer().frame(height: 6)
                 SectionHeaderView(title: "Earlier today")
@@ -131,10 +136,6 @@ struct MenuDropdownView: View {
                         onSelect: { toggle(event.id) }
                     )
                 }
-            }
-
-            if nowEvents.isEmpty && upcomingEvents.isEmpty && pastEvents.isEmpty {
-                EmptyStateView(kind: .allClear)
             }
         }
     }
@@ -150,6 +151,12 @@ struct MenuDropdownView: View {
                 }
             }
         }
+    }
+
+    // MARK: - Helpers
+
+    private func kbd(for name: KeyboardShortcuts.Name) -> String? {
+        KeyboardShortcuts.getShortcut(for: name)?.description
     }
 
     // MARK: - Toggle
