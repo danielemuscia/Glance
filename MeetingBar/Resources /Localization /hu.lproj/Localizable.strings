@@ -12,7 +12,7 @@
 "general_five_minute_before" = "5 perccel előtte";
 "create_meeting_error_title" = "Nem lehet új megbeszélést létrehozni!";
 "next_meeting_empty_title" = "Nincs jövőbeli megbeszélés a mai napra!";
-"window_title_onboarding" = "Üdvözli a MeetingBar";
+"window_title_onboarding" = "Üdvözli a Glance";
 
 // MARK: - Preferences tabs
 
@@ -96,7 +96,7 @@
 "preferences_general_external_patronage" = "Támogatás";
 "preferences_general_patron_twelve_months" = "12 hónap - 11,99 USD";
 "preferences_general_patron_description" = "Ezek egyszeri vásárlások, nem újulnak meg maguktól.";
-"preferences_general_patron_thank_for_purchase" = "Köszi! Támogattad a MeetingBar-t %d hónapig 🎉";
+"preferences_general_patron_thank_for_purchase" = "Köszi! Támogattad a Glance-t %d hónapig 🎉";
 "preferences_general_patron_restore_purchases" = "Vásárlások visszaállítása";
 "preferences_appearance_events_title" = "Események";
 "preferences_appearance_events_show_events_for_today_value" = "ma";
@@ -120,11 +120,11 @@
 "preferences_calendars_add_account_button" = "Naptár felhasználó hozzáadása";
 "preferences_calendars_add_account_modal" = "Külső naptárak hozzáadásához:\n1. Nyisd meg az alapértelmezett naptár alkalmazást\n2. Kattincs a 'Fiók hozzáadása' menüpontra\n3. Válaszd ki és csatlakoztasd a fiókodat";
 "preferences_advanced_wrong_location_message" = "Kérjük, válassza ki a Felhasználó → Könyvtár → Alkalmazás Scriptek → leits.MeetingBar mappa";
-"window_title_preferences" = "MeetingBar Preferenciák";
+"window_title_preferences" = "Glance Preferenciák";
 "preferences_configure_browsers_modal_add_browser_name" = "Név";
 "preferences_general_shortcut_join_from_clipboard" = "Csatlakozás a találkozóhoz vágólapról:";
 "preferences_advanced_setting_warning" = "⚠️ Csak akkor használd ezeket a beállításokat, ha érted amit csinálnak";
-"preferences_general_meeting_bar_description" = "A MeetingBar egy nyílt forráskódú alkalmazás\nAndrii Leitsius🇺🇦 által létrehozott\nA simább és könnyebb online találkozókért";
+"preferences_general_meeting_bar_description" = "A Glance egy nyílt forráskódú alkalmazás\nAndrii Leitsius🇺🇦 által létrehozott\nA simább és könnyebb online találkozókért";
 "preferences_appearance_status_bar_time_title" = "Idő";
 "preferences_configure_browsers_modal_add_browser_title" = "Webböngésző hozzáadása";
 "preferences_appearance_status_bar_title_event_title_value" = "esemény címe";

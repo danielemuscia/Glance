@@ -61,7 +61,7 @@ struct MenuDropdownView: View {
             ActionRowView(icon: "plus",   label: "Create meeting",           kbd: kbd(for: .createMeetingShortcut), action: onCreateMeeting)
             MenuSeparator()
             ActionRowView(icon: "gear",   label: "Preferences…",             kbd: "⌘,", action: onPreferences)
-            ActionRowView(icon: "power",  label: "Quit MeetingBar",          kbd: "⌘Q", action: onQuit)
+            ActionRowView(icon: "power",  label: "status_bar_quit".loco(),    kbd: "⌘Q", action: onQuit)
             Spacer(minLength: 6)
         }
     }

@@ -152,7 +152,7 @@ struct ChangelogView: View {
                         Section(header: Text("Version 4.6")) {
                             Text("• Configure appearance for tentative events")
                             Text("• Open Slack huddle links directly in Slack app")
-                            Text("• Open preferences with `meetingbar://preferences` link")
+                            Text("• Open preferences with `glance://preferences` link")
                             Text("• Dismiss event action for Shortcuts")
                             Text("• Fixed a bug with autojoin when the screen is locked")
                         }

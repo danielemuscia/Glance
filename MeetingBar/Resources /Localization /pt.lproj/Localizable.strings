@@ -13,9 +13,9 @@
 "create_meeting_error_message" = "URL personalizada \"%@\" ausente ou inválida. ";
 "next_meeting_empty_title" = "Não há reuniões agendadas para hoje";
 "next_meeting_empty_message" = "Uau! É hora de preparar um chocolate quente";
-"window_title_preferences" = "Preferências do MeetingBar";
-"window_title_onboarding" = "Bem-vindo ao MeetingBar";
-"windows_title_changelog" = "MeetingBar – Novidades";
+"window_title_preferences" = "Preferências do Glance";
+"window_title_onboarding" = "Bem-vindo ao Glance";
+"windows_title_changelog" = "Glance – Novidades";
 "preferences_tab_general" = "Geral";
 "preferences_tab_appearance" = "Aparência";
 "preferences_tab_bookmarks" = "Favoritos";
@@ -30,7 +30,7 @@
 "preferences_general_shortcut_create_meeting" = "Criar reunião:";
 "preferences_general_shortcut_join_next" = "Entrar na próxima reunião:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "Alternar visibilidade do título na barra de estado:";
-"preferences_general_meeting_bar_description" = "MeetingBar é uma app Open Source\ncriada por Andrii Leitsius 🇺🇦\nPara reuniões mais fluidas e fáceis";
+"preferences_general_meeting_bar_description" = "Glance é uma app Open Source\ncriada por Andrii Leitsius 🇺🇦\nPara reuniões mais fluidas e fáceis";
 "preferences_general_external_patronage" = "Apoio";
 "preferences_general_external_contact" = "Contacto";
 "preferences_general_patron_title" = "Torne-se um apoiador";
@@ -38,7 +38,7 @@
 "preferences_general_patron_six_months" = "6 meses – 5.99 USD";
 "preferences_general_patron_twelve_months" = "12 meses – 11.99 USD";
 "preferences_general_patron_description" = "Estas são compras únicas e não serão renovadas automaticamente.";
-"preferences_general_patron_thank_for_purchase" = "Obrigado! Apoiou o MeetingBar por %d meses 🎉";
+"preferences_general_patron_thank_for_purchase" = "Obrigado! Apoiou o Glance por %d meses 🎉";
 "preferences_general_patron_restore_purchases" = "Restaurar Compras";
 "preferences_general_feedback_title" = "Se tiver alguma dúvida ou sugestão,\nsinta-se à vontade para entrar em contacto:";
 "preferences_general_feedback_email" = "E-mail";

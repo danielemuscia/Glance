@@ -1,6 +1,6 @@
 /*
   Localizable.strings
-  MeetingBar
+  Glance
 
   Created by Mitsukuni Sato on 29.07.2021.
   Copyright © 2021 Andrii Leitsius. All rights reserved.
@@ -21,9 +21,9 @@
 // MARK: - Window titles
 
 
-"window_title_preferences" = "MeetingBar の設定";
-"window_title_onboarding" = "MeetingBar へようこそ";
-"windows_title_changelog" = "MeetingBar - 新機能";
+"window_title_preferences" = "Glance の設定";
+"window_title_onboarding" = "Glance へようこそ";
+"windows_title_changelog" = "Glance - 新機能";
 
 // MARK: - Preferences tabs
 
@@ -47,7 +47,7 @@
 "preferences_general_shortcut_join_next" = "次のミーティングに参加:";
 "preferences_general_shortcut_join_from_clipboard" = "クリップボードからミーティングに参加:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "ステータスバーのタイトル表示をトグルする:";
-"preferences_general_meeting_bar_description" = "MeetingBar は Andrii Leitsius 🇺🇦 によって開発されたオープンソースアプリケーションです。\nオンラインミーティングをスムーズで簡単にします。";
+"preferences_general_meeting_bar_description" = "Glance は Andrii Leitsius 🇺🇦 によって開発されたオープンソースアプリケーションです。\nオンラインミーティングをスムーズで簡単にします。";
 "preferences_general_external_patronage" = "パトロンになる";
 "preferences_general_external_contact" = "お問い合わせ";
 "preferences_general_patron_title" = "パトロンになる";
@@ -55,7 +55,7 @@
 "preferences_general_patron_six_months" = "6ヶ月 - 5.99 USD";
 "preferences_general_patron_twelve_months" = "12ヶ月 - 11.99 USD";
 "preferences_general_patron_description" = "これらは一回限りの購入で、自動更新されません。";
-"preferences_general_patron_thank_for_purchase" = "ありがとう！MeetingBar をサポートしてくれて %d か月になりました！🎉";
+"preferences_general_patron_thank_for_purchase" = "ありがとう！Glance をサポートしてくれて %d か月になりました！🎉";
 "preferences_general_patron_restore_purchases" = "購入の復元";
 "preferences_general_feedback_title" = "質問やフィードバックがあれば、\nお気軽にお問い合わせください:";
 "preferences_general_feedback_email" = "メール";
@@ -84,7 +84,7 @@
 "preferences_appearance_events_value_only_with_link" = "リンクのあるイベントのみ表示";
 "preferences_appearance_status_bar_title" = "ステータスバー";
 "preferences_appearance_status_bar_icon_title" = "アイコン";
-"preferences_appearance_status_bar_icon_app_icon_value" = " MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = " Glance";
 "preferences_appearance_status_bar_icon_calendar_icon_value" = " カレンダー";
 "preferences_appearance_status_bar_icon_specific_icon_value" = " ミーティング固有のアイコン (MS Teamsなど)";
 "preferences_appearance_status_bar_icon_no_icon_value" = " アイコンなし";
@@ -231,7 +231,7 @@
 "status_bar_whats_new" = "お知らせ";
 "status_bar_rate_app" = "アプリを評価する";
 "status_bar_preferences" = "設定";
-"status_bar_quit" = "MeetingBar を終了";
+"status_bar_quit" = "Glance を終了";
 "status_bar_no_title" = "タイトルなし";
 "status_bar_event_status_now" = "現在 (残り %@)";
 "status_bar_event_status_in" = "まで%@";
@@ -244,9 +244,9 @@
 // MARK: - Welcome screen
 
 
-"welcome_screen_greeting_main_title" = "こんにちは！ MeetingBar は必要な機能が揃ったシンプルなアプリです。";
+"welcome_screen_greeting_main_title" = "こんにちは！ Glance は必要な機能が揃ったシンプルなアプリです。";
 "welcome_screen_greeting_additional_title" = "100% 使いこなしましょう！";
-"welcome_screen_login_launch_toggle_title" = "ログイン時に MeetingBar を起動する";
+"welcome_screen_login_launch_toggle_title" = "ログイン時に Glance を起動する";
 "welcome_screen_shortcut_next_meeting_title" = "次のミーティングに参加するためのショートカット:";
 "welcome_screen_ad_hoc_meeting_title" = "次のアプリでミーティングを作成: ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "ショートカット:";
@@ -264,7 +264,7 @@
 "access_screen_access_denied_title" = "おっと！カレンダーへのアクセスが拒否されているようです。";
 "access_screen_access_screen_access_denied_go_to_title" = "Go to";
 "access_screen_access_denied_system_preferences_button" = "システム設定";
-"access_screen_access_denied_checkbox_title" = "MeetingBarの近くにあるチェックボックスを選択します。";
+"access_screen_access_denied_checkbox_title" = "Glanceの近くにあるチェックボックスを選択します。";
 "access_screen_access_denied_relaunch_title" = "手動でアプリを起動して設定を続ける必要があります。";
 "access_screen_access_granted_title" = "カレンダーへのアクセス許可を求めています。";
 "access_screen_access_granted_click_ok_title" = "macOS のポップアップウィンドウで \"OK\" をクリックしてください。";
@@ -276,7 +276,7 @@
 "access_screen_provider_gcalendar_data_source" = "Get data directly from Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "Only one Google account";
 "access_screen_provider_gcalendar_sign_in_title" = "Googleでログイン";
-"access_screen_provider_gcalendar_sign_in_description" = "MeetingBarアプリがブラウザのカレンダーにアクセスすることを許可";
+"access_screen_provider_gcalendar_sign_in_description" = "Glanceアプリがブラウザのカレンダーにアクセスすることを許可";
 "access_screen_try_again" = "もう一度試してください";
 
 // MARK: - Shared
@@ -288,8 +288,8 @@
 "general_one_minute_before" = "1分前";
 "general_three_minute_before" = "3分前";
 "general_five_minute_before" = "5分前";
-"shared_send_notification_no_alert_style_tip" = "⚠️ MeetingBar の macOS の通知設定は、通知パネルに設定されていません。持続的な通知を利用する場合は、通知パネルに設定してください。";
-"shared_send_notification_disabled_tip" = "⚠️ MeetingBar の macOS の通知設定が現在オフになっています。ミーティングを見逃さないために、 macOS のシステム設定で通知を有効にしてください。";
+"shared_send_notification_no_alert_style_tip" = "⚠️ Glance の macOS の通知設定は、通知パネルに設定されていません。持続的な通知を利用する場合は、通知パネルに設定してください。";
+"shared_send_notification_disabled_tip" = "⚠️ Glance の macOS の通知設定が現在オフになっています。ミーティングを見逃さないために、 macOS のシステム設定で通知を有効にしてください。";
 "shared_automatic_event_join_toggle" = "自動的に次のイベントを開く";
 "shared_automatic_event_join_tip" = "設定したアプリやブラウザで次のイベントを自動的に開きます。";
 
@@ -304,7 +304,7 @@
 // MARK: - Store
 
 
-"store_patronage_title" = "MeetingBar のパトロンになる";
+"store_patronage_title" = "Glance のパトロンになる";
 "store_patronage_restore_success_message" = "復元しました";
 "store_patronage_restore_nothing_message" = "復元する内容がありません";
 "store_patronage_purchase_success_message" = "購入しました。あなたのサポートに感謝します！";

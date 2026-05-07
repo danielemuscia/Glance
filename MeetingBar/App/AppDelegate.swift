@@ -332,7 +332,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotifi
     ) {
         if let string = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue,
            let url = URL(string: string) {
-            if url == URL(string: "meetingbar://preferences") {
+            if url == URL(string: "glance://preferences") {
                 openPreferencesWindow(nil)
             } else {
                 GCEventStore.shared

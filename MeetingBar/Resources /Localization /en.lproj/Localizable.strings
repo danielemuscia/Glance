@@ -1,6 +1,6 @@
 /* 
   Localizable.strings
-  MeetingBar
+  Glance
 
   Copyright © 2021 Andrii Leitsius. All rights reserved.
 */
@@ -23,9 +23,9 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "MeetingBar Preferences";
-"window_title_onboarding" = "Welcome to MeetingBar";
-"windows_title_changelog" = "MeetingBar – What's New";
+"window_title_preferences" = "Glance Preferences";
+"window_title_onboarding" = "Welcome to Glance";
+"windows_title_changelog" = "Glance – What's New";
 
 // MARK: - Preferences tabs
 
@@ -48,7 +48,7 @@
 "preferences_general_shortcut_join_next" = "Join next meeting:";
 "preferences_general_shortcut_join_from_clipboard" = "Join meeting from clipboard:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "Toggle title visibility in status bar:";
-"preferences_general_meeting_bar_description" = "MeetingBar is an open-source app\ncreated by Andrii Leitsius 🇺🇦\nFor smoother and easier online meetings";
+"preferences_general_meeting_bar_description" = "Glance is an open-source app\ncreated by Andrii Leitsius 🇺🇦\nFor smoother and easier online meetings";
 "preferences_general_external_patronage" = "Patronage";
 "preferences_general_external_contact" = "Contact";
 "preferences_general_patron_title" = "Become a Patron";
@@ -56,7 +56,7 @@
 "preferences_general_patron_six_months" = "6 months – 5.99 USD";
 "preferences_general_patron_twelve_months" = "12 months – 11.99 USD";
 "preferences_general_patron_description" = "These are one-off purchases, and will not auto-renew.";
-"preferences_general_patron_thank_for_purchase" = "Thanks! You have supported MeetingBar for %d months 🎉";
+"preferences_general_patron_thank_for_purchase" = "Thanks! You have supported Glance for %d months 🎉";
 "preferences_general_patron_restore_purchases" = "Restore Purchases";
 "preferences_general_feedback_title" = "If you have any questions or feedback,\nfeel free to get in contact:";
 "preferences_general_feedback_email" = "E-mail";
@@ -84,7 +84,7 @@
 "preferences_appearance_events_value_only_with_link" = "show only those with meeting links";
 "preferences_appearance_status_bar_title" = "Status bar";
 "preferences_appearance_status_bar_icon_title" = "Icon";
-"preferences_appearance_status_bar_icon_app_icon_value" = "\U00A0MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = "\U00A0Glance";
 "preferences_appearance_status_bar_icon_calendar_icon_value" = "\U00A0Calendar";
 "preferences_appearance_status_bar_icon_specific_icon_value" = "\U00A0Event-specific icon (e.g. MS Teams)";
 "preferences_appearance_status_bar_icon_no_icon_value" = "\U00A0No icon";
@@ -240,7 +240,7 @@
 "status_bar_whats_new" = "What's new?";
 "status_bar_rate_app" = "Rate App";
 "status_bar_preferences" = "Preferences";
-"status_bar_quit" = "Quit MeetingBar";
+"status_bar_quit" = "Quit Glance";
 "status_bar_no_title" = "No title";
 "status_bar_event_status_now" = "now (%@ left)";
 "status_bar_event_status_in" = "in %@";
@@ -251,9 +251,9 @@
 "status_bar_error_app_link_message" = "Ensure you have the %@ installed, or open such links in a web browser from the preferences instead.";
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Hi! MeetingBar is such a simple app that everything is almost ready.";
+"welcome_screen_greeting_main_title" = "Hi! Glance is such a simple app that everything is almost ready.";
 "welcome_screen_greeting_additional_title" = "Let’s make it 100% yours!";
-"welcome_screen_login_launch_toggle_title" = "Launch MeetingBar at Login";
+"welcome_screen_login_launch_toggle_title" = "Launch Glance at Login";
 "welcome_screen_shortcut_next_meeting_title" = "Join next event meeting with your shortcut:";
 "welcome_screen_ad_hoc_meeting_title" = "Create ad hoc meetings in ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "with your shortcut:";
@@ -269,7 +269,7 @@
 "access_screen_access_denied_title" = "Oops! It looks like you denied access to calendars.";
 "access_screen_access_screen_access_denied_go_to_title" = "Go to";
 "access_screen_access_denied_system_preferences_button" = "System Preferences";
-"access_screen_access_denied_checkbox_title" = "and select a checkbox near MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "and select a checkbox near Glance.";
 "access_screen_access_denied_relaunch_title" = "Then launch the app manually to continue the setup.";
 "access_screen_access_granted_title" = "Requesting access to calendars…";
 "access_screen_access_granted_click_ok_title" = "Click \"OK\" in the macOS popup.";
@@ -281,7 +281,7 @@
 "access_screen_provider_gcalendar_data_source" = "Get data directly from Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "Only one Google account";
 "access_screen_provider_gcalendar_sign_in_title" = "Google Sign In";
-"access_screen_provider_gcalendar_sign_in_description" = "Allow MeetingBar access to your calendar in browser window";
+"access_screen_provider_gcalendar_sign_in_description" = "Allow Glance access to your calendar in browser window";
 "access_screen_try_again" = "Try again";
 
 // MARK: - Shared
@@ -289,7 +289,7 @@
 "shared_send_notification_toggle" = "Send a system notification";
 "shared_fullscreen_notification_toggle" = "Show a fullscreen notification";
 "shared_send_notification_no_alert_style_tip" = "Note: Notifications are set to Banners, so they appear briefly before disappearing. To keep them onscreen until you dismiss them, switch to Alerts in your macOS notification settings.";
-"shared_send_notification_disabled_tip" = "⚠️ Your macOS notification settings for MeetingBar are off. Turn on notifications in the macOS system settings to keep track of meetings.";
+"shared_send_notification_disabled_tip" = "⚠️ Your macOS notification settings for Glance are off. Turn on notifications in the macOS system settings to keep track of meetings.";
 "shared_automatic_event_join_toggle" = "Automatically join next event meeting";
 "shared_automatic_event_join_tip" = "This setting will automatically open your next meeting in your configured app or browser";
 
@@ -303,7 +303,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "MeetingBar Patronage";
+"store_patronage_title" = "Glance Patronage";
 "store_patronage_restore_success_message" = "Restored";
 "store_patronage_restore_nothing_message" = "Nothing to restore";
 "store_patronage_purchase_success_message" = "Purchase made. Thanks for your support!";
