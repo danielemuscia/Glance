@@ -37,7 +37,7 @@ struct GlanceStatusIcon: View {
             gPath().fill()
 
             if accentDot {
-                let isDark = NSAppearance.currentDrawingAppearance().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+                let isDark = NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
                 NSColor(srgbRed: isDark ? 0x7F / 255 : 0x2C / 255,
                         green:   isDark ? 0xA0 / 255 : 0x5C / 255,
                         blue:    1, alpha: 1).setFill()
