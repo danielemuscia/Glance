@@ -72,7 +72,7 @@ struct GlanceStatusIcon: View {
         path.curve(to: .init(x: 415.381, y: 548.545), controlPoint1: .init(x: 400.608, y: 498.242), controlPoint2: .init(x: 405.532, y: 525.818))
         path.curve(to: .init(x: 457.199, y: 600.591), controlPoint1: .init(x: 425.229, y: 571.273), controlPoint2: .init(x: 439.169, y: 588.621))
         path.curve(to: .init(x: 521.062, y: 618.318), controlPoint1: .init(x: 475.229, y: 612.409), controlPoint2: .init(x: 496.517, y: 618.318))
-        path.curve(to: .init(x: 578.108, y: 606.5),   controlPoint1: .init(x: 543.335, y: 618.318), controlPoint2: .init(x: 562.35,  614.379))
+        path.curve(to: .init(x: 578.108, y: 606.5),   controlPoint1: .init(x: 543.335, y: 618.318), controlPoint2: .init(x: 562.35, y: 614.379))
         path.curve(to: .init(x: 614.472, y: 572.636), controlPoint1: .init(x: 594.017, y: 598.47),  controlPoint2: .init(x: 606.138, y: 587.182))
         path.curve(to: .init(x: 627.199, y: 521.045), controlPoint1: .init(x: 622.956, y: 558.091), controlPoint2: .init(x: 627.199, y: 540.894))
         // Horizontal bar — opening of the G
