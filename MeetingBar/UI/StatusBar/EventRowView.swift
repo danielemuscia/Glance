@@ -91,7 +91,7 @@ struct EventRowView: View {
             .padding(.leading, 2)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(selected ? Color.accentColor.opacity(0.15) : .clear)
+                    .fill(selected ? Color.glanceAccent.opacity(0.15) : .clear)
             )
             .opacity(rowOpacity)
         }

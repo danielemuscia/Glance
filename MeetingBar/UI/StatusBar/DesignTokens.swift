@@ -38,7 +38,6 @@ extension Color {
             : Color(red: 0.96, green: 0.96, blue: 0.97)   // ~NSColor.windowBackgroundColor light
     }
 
-    static let mbDanger = Color(red: 1.0, green: 0.231, blue: 0.188) // #FF3B30
 }
 
 // MARK: - Density preset

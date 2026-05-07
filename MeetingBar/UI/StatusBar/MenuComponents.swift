@@ -213,7 +213,7 @@ struct MenuItemStyle: ButtonStyle {
     }
 
     private func background(pressed: Bool) -> Color {
-        if pressed   { return Color.accentColor.opacity(scheme == .dark ? 0.35 : 0.18) }
+        if pressed   { return Color.glanceAccent.opacity(scheme == .dark ? 0.35 : 0.18) }
         if isHovered { return Color.mbHover(scheme) }
         return .clear
     }
@@ -240,7 +240,7 @@ struct ActionRowView: View {
                     .frame(width: 20, alignment: .center)
                 Text(label)
                     .font(.system(size: 13))
-                    .foregroundColor(danger ? Color.mbDanger : Color.mbText1(scheme))
+                    .foregroundColor(danger ? Color.glanceDanger : Color.mbText1(scheme))
                 Spacer()
                 if let kbd {
                     Text(kbd)
@@ -323,7 +323,7 @@ struct EmptyStateView: View {
                 Button(primaryAction.label, action: primaryAction.action)
                     .buttonStyle(.plain)
                     .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.glanceAccentText)
                     .padding(.top, 2)
             }
         }

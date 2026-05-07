@@ -90,7 +90,7 @@ struct DetailPanelView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)
-                    .background(Color.accentColor)
+                    .background(Color.glanceAccent)
                     .cornerRadius(8)
                 }
                 .buttonStyle(.plain)
@@ -145,9 +145,9 @@ struct DetailPanelView: View {
 
     private var statusColor: Color {
         switch event.participationStatus {
-        case .accepted:  return .green
-        case .declined:  return Color.mbDanger
-        case .tentative: return .orange
+        case .accepted:  return .glanceSuccess
+        case .declined:  return .glanceDanger
+        case .tentative: return .glanceWarning
         default:         return .gray
         }
     }
@@ -243,7 +243,7 @@ struct DetailPanelView: View {
                     if let url = dest {
                         Link(display, destination: url)
                             .font(.system(size: 11.5))
-                            .foregroundColor(Color.accentColor)
+                            .foregroundColor(Color.glanceAccentText)
                             .lineLimit(1)
                             .truncationMode(.middle)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -301,8 +301,8 @@ struct DetailPanelView: View {
 
     private func attendeeColor(_ status: MBEventAttendeeStatus) -> Color {
         switch status {
-        case .accepted:  return .green
-        case .tentative: return .orange
+        case .accepted:  return .glanceSuccess
+        case .tentative: return .glanceWarning
         default:         return .gray
         }
     }

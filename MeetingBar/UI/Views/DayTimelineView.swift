@@ -146,7 +146,7 @@ struct DayRelativeTimelineView: View {
                 if layout.visibleRange.contains(currentDate) {
                     let x = layout.xPosition(of: currentDate, width: width)
                     Rectangle()
-                        .fill(Color.accentColor)
+                        .fill(Color.glanceAccent)
                         .frame(width: 2, height: contentHeight + 4)
                         .offset(x: x - 1, y: -2)
                 }

@@ -52,7 +52,7 @@ struct HeroCardView: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Circle()
-                        .fill(Color.accentColor)
+                        .fill(Color.glanceAccent)
                         .frame(width: 6, height: 6)
                         .scaleEffect(pulsing ? 0.75 : 1.0)
                         .opacity(pulsing ? 0.7 : 1.0)
@@ -60,7 +60,7 @@ struct HeroCardView: View {
                     Text("NOW · ENDS IN \(minutesRemaining)M")
                         .font(.system(size: 11, weight: .semibold))
                         .tracking(0.5)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(Color.glanceAccentText)
                 }
 
                 Text(event.title)
@@ -98,7 +98,7 @@ struct HeroCardView: View {
                     .foregroundColor(.white)
                     .padding(.vertical, 7)
                     .padding(.horizontal, 14)
-                    .background(Color.accentColor)
+                    .background(Color.glanceAccent)
                     .cornerRadius(8)
                 }
                 .buttonStyle(.plain)
@@ -132,13 +132,13 @@ struct HeroCardView: View {
             RoundedRectangle(cornerRadius: 12).fill(Color.mbHeroBg(scheme))
             RoundedRectangle(cornerRadius: 12).fill(
                 LinearGradient(
-                    colors: [Color.accentColor.opacity(scheme == .dark ? 0.22 : 0.14),
-                             Color.accentColor.opacity(0)],
+                    colors: [Color.glanceAccent.opacity(scheme == .dark ? 0.22 : 0.14),
+                             Color.glanceAccent.opacity(0)],
                     startPoint: .topLeading, endPoint: .bottomTrailing
                 )
             )
             RoundedRectangle(cornerRadius: 12)
-                .stroke(selected ? Color.accentColor.opacity(0.55) : Color.black.opacity(0.06),
+                .stroke(selected ? Color.glanceAccent.opacity(0.55) : Color.black.opacity(0.06),
                         lineWidth: selected ? 2 : 0.5)
         }
     }

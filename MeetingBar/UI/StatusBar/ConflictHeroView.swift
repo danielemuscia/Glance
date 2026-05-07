@@ -37,7 +37,7 @@ struct ConflictHeroView: View {
     private var headerStrip: some View {
         HStack(spacing: 6) {
             Circle()
-                .fill(Color.accentColor)
+                .fill(Color.glanceAccent)
                 .frame(width: 6, height: 6)
                 .scaleEffect(pulsing ? 0.75 : 1.0)
                 .opacity(pulsing ? 0.7 : 1.0)
@@ -45,7 +45,7 @@ struct ConflictHeroView: View {
             Text("\(events.count) HAPPENING NOW")
                 .font(.system(size: 11, weight: .semibold))
                 .tracking(0.5)
-                .foregroundColor(Color.accentColor)
+                .foregroundColor(Color.glanceAccentText)
             Spacer()
         }
         .padding(.horizontal, 12)
@@ -102,7 +102,7 @@ struct ConflictHeroView: View {
                     .foregroundColor(.white)
                     .padding(.vertical, 6)
                     .padding(.horizontal, 12)
-                    .background(Color.accentColor)
+                    .background(Color.glanceAccent)
                     .cornerRadius(7)
                 }
                 .buttonStyle(.plain)
@@ -111,7 +111,7 @@ struct ConflictHeroView: View {
         .padding(.vertical, 10)
         .padding(.horizontal, 12)
         .background(isSelected
-            ? Color.accentColor.opacity(scheme == .dark ? 0.18 : 0.12)
+            ? Color.glanceAccent.opacity(scheme == .dark ? 0.18 : 0.12)
             : Color.clear)
         .contentShape(Rectangle())
         .onTapGesture { onSelect(event.id) }
@@ -124,8 +124,8 @@ struct ConflictHeroView: View {
             RoundedRectangle(cornerRadius: 12).fill(Color.mbHeroBg(scheme))
             RoundedRectangle(cornerRadius: 12).fill(
                 LinearGradient(
-                    colors: [Color.accentColor.opacity(scheme == .dark ? 0.22 : 0.14),
-                             Color.accentColor.opacity(0)],
+                    colors: [Color.glanceAccent.opacity(scheme == .dark ? 0.22 : 0.14),
+                             Color.glanceAccent.opacity(0)],
                     startPoint: .topLeading, endPoint: .bottomTrailing
                 )
             )
