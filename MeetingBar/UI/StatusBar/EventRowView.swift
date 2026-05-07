@@ -30,7 +30,7 @@ struct EventRowView: View {
             HStack(alignment: .top, spacing: 10) {
                 Text(timeString)
                     .font(.system(size: 12, weight: .medium).monospacedDigit())
-                    .foregroundColor(isPast ? Color.mbText3(scheme) : Color.mbText2(scheme))
+                    .foregroundColor(isPast ? Color.mbText3(scheme) : Color.glanceInk2)
                     .strikethrough(isDeclined)
                     .frame(width: 42, alignment: .leading)
                     .padding(.top, 1)
@@ -43,7 +43,7 @@ struct EventRowView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(event.title)
                         .font(.system(size: density.titleFontSize, weight: .medium))
-                        .foregroundColor(Color.mbText1(scheme))
+                        .foregroundColor(Color.glanceInk1)
                         .strikethrough(isDeclined)
                         .lineLimit(1)
 
@@ -62,7 +62,7 @@ struct EventRowView: View {
                             }
                         }
                         .font(.system(size: 11.5))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                         .lineLimit(1)
                     }
 
@@ -91,7 +91,7 @@ struct EventRowView: View {
             .padding(.leading, 2)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(selected ? Color.accentColor.opacity(0.15) : .clear)
+                    .fill(selected ? Color.glanceAccent.opacity(0.15) : .clear)
             )
             .opacity(rowOpacity)
         }

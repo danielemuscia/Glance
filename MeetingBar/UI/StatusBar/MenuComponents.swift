@@ -180,12 +180,12 @@ struct SectionHeaderView: View {
         HStack(alignment: .firstTextBaseline) {
             Text(title)
                 .font(.system(size: 12.5, weight: .medium))
-                .foregroundColor(Color.mbText2(scheme))
+                .foregroundColor(Color.glanceInk2)
             Spacer()
             if let sub {
                 Text(sub)
                     .font(.system(size: 12))
-                    .foregroundColor(Color.mbText2(scheme))
+                    .foregroundColor(Color.glanceInk2)
             }
         }
         .padding(.horizontal, 14)
@@ -213,7 +213,7 @@ struct MenuItemStyle: ButtonStyle {
     }
 
     private func background(pressed: Bool) -> Color {
-        if pressed   { return Color.accentColor.opacity(scheme == .dark ? 0.35 : 0.18) }
+        if pressed   { return Color.glanceAccent.opacity(scheme == .dark ? 0.35 : 0.18) }
         if isHovered { return Color.mbHover(scheme) }
         return .clear
     }
@@ -236,11 +236,11 @@ struct ActionRowView: View {
             HStack(spacing: 12) {
                 Image(systemName: icon)
                     .font(.system(size: 14))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                     .frame(width: 20, alignment: .center)
                 Text(label)
                     .font(.system(size: 13))
-                    .foregroundColor(danger ? Color.mbDanger : Color.mbText1(scheme))
+                    .foregroundColor(danger ? Color.glanceDanger : Color.glanceInk1)
                 Spacer()
                 if let kbd {
                     Text(kbd)
@@ -293,10 +293,10 @@ struct EmptyStateView: View {
             VStack(spacing: 5) {
                 Text("All done for today")
                     .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                 Text("No more meetings on your calendar.")
                     .font(.system(size: 12.5))
-                    .foregroundColor(Color.mbText2(scheme))
+                    .foregroundColor(Color.glanceInk2)
                     .multilineTextAlignment(.center)
             }
         }
@@ -313,17 +313,17 @@ struct EmptyStateView: View {
             VStack(spacing: 3) {
                 Text("No calendar connected")
                     .font(.system(size: 13, weight: .semibold))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                 Text("Connect a calendar to see your meetings here.")
                     .font(.system(size: 12))
-                    .foregroundColor(Color.mbText2(scheme))
+                    .foregroundColor(Color.glanceInk2)
                     .multilineTextAlignment(.center)
             }
             if let primaryAction {
                 Button(primaryAction.label, action: primaryAction.action)
                     .buttonStyle(.plain)
                     .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.glanceAccentText)
                     .padding(.top, 2)
             }
         }
@@ -345,7 +345,7 @@ struct IconButtonView: View {
         Button(action: action) {
             Image(systemName: systemName)
                 .font(.system(size: 12, weight: .semibold))
-                .foregroundColor(hovered ? Color.mbText1(scheme) : Color.mbText2(scheme))
+                .foregroundColor(hovered ? Color.glanceInk1 : Color.glanceInk2)
                 .frame(width: 26, height: 26)
                 .background(
                     RoundedRectangle(cornerRadius: 6)

@@ -98,7 +98,7 @@ struct EndEventNotificationPicker: View {
                 Text("3 minute before").tag(TimeBeforeEventEnd.threeMinuteBefore)
                 Text("5 minute before").tag(TimeBeforeEventEnd.fiveMinuteBefore)
             }.frame(width: 220, alignment: .leading).labelsHidden().disabled(!endOfEventNotification)
-            Text("βeta").font(.caption).foregroundColor(.orange)
+            Text("βeta").font(.caption).foregroundColor(.glanceWarning)
         }
     }
 }

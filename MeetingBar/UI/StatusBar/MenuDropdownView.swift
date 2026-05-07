@@ -16,8 +16,6 @@ struct MenuDropdownView: View {
     var onQuit:          () -> Void
     var onReload:        () -> Void
 
-    @Environment(\.colorScheme) private var scheme
-
     // MARK: - Derived lists
 
     private var nowEvents: [MBEvent] {
@@ -72,7 +70,7 @@ struct MenuDropdownView: View {
         HStack {
             Text(Date().formatted(.dateTime.weekday(.wide).month(.abbreviated).day()))
                 .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(Color.mbText1(scheme))
+                .foregroundColor(Color.glanceInk1)
             Spacer()
             IconButtonView(systemName: "arrow.clockwise", action: onReload)
         }

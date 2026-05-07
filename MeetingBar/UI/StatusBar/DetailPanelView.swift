@@ -60,11 +60,11 @@ struct DetailPanelView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(event.title)
                         .font(.system(size: 15, weight: .semibold))
-                        .foregroundColor(Color.mbText1(scheme))
+                        .foregroundColor(Color.glanceInk1)
                         .lineLimit(2)
                     Text(event.calendar.title)
                         .font(.system(size: 11.5))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                 }
 
                 Spacer()
@@ -72,7 +72,7 @@ struct DetailPanelView: View {
                 Button(action: onClose) {
                     Image(systemName: "xmark")
                         .font(.system(size: 11, weight: .semibold))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                         .frame(width: 22, height: 22)          // hit area inside label
                         .background(Color.mbHover(scheme))
                         .clipShape(Circle())
@@ -90,7 +90,7 @@ struct DetailPanelView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)
-                    .background(Color.accentColor)
+                    .background(Color.glanceAccent)
                     .cornerRadius(8)
                 }
                 .buttonStyle(.plain)
@@ -115,7 +115,7 @@ struct DetailPanelView: View {
             // icon left edge in each row (actionsRow cancels it with −14 pt).
             Text(label)
                 .font(.system(size: 12.5, weight: .medium))
-                .foregroundColor(Color.mbText2(scheme))
+                .foregroundColor(Color.glanceInk2)
             content()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -138,16 +138,16 @@ struct DetailPanelView: View {
             Circle().fill(color).frame(width: 8, height: 8)
             Text(statusLabel)
                 .font(.system(size: 13))
-                .foregroundColor(Color.mbText1(scheme))
+                .foregroundColor(Color.glanceInk1)
         }
         .padding(.vertical, 9)
     }
 
     private var statusColor: Color {
         switch event.participationStatus {
-        case .accepted:  return .green
-        case .declined:  return Color.mbDanger
-        case .tentative: return .orange
+        case .accepted:  return .glanceSuccess
+        case .declined:  return .glanceDanger
+        case .tentative: return .glanceWarning
         default:         return .gray
         }
     }
@@ -173,10 +173,10 @@ struct DetailPanelView: View {
         return VStack(alignment: .leading, spacing: 2) {
             Text(timeStr)
                 .font(.system(size: 15, weight: .semibold).monospacedDigit())
-                .foregroundColor(Color.mbText1(scheme))
+                .foregroundColor(Color.glanceInk1)
             Text("\(mins) minutes · \(event.startDate.formatted(.dateTime.weekday(.wide).month().day()))")
                 .font(.system(size: 12))
-                .foregroundColor(Color.mbText2(scheme))
+                .foregroundColor(Color.glanceInk2)
         }
         .padding(.vertical, 9)
     }
@@ -199,13 +199,13 @@ struct DetailPanelView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(locationLabel)
                     .font(.system(size: 13, weight: .semibold))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                     .lineLimit(1)
 
                 if let link {
                     Link(link.url.absoluteString, destination: link.url)
                         .font(.system(size: 12))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                         .lineLimit(1)
                         .truncationMode(.middle)
                 }
@@ -218,7 +218,7 @@ struct DetailPanelView: View {
                 }
                 .buttonStyle(.plain)
                 .font(.system(size: 11, weight: .medium))
-                .foregroundColor(Color.mbText2(scheme))
+                .foregroundColor(Color.glanceInk2)
                 .padding(.horizontal, 9)
                 .padding(.vertical, 4)
                 .background(Color.mbChip(scheme))
@@ -236,21 +236,21 @@ struct DetailPanelView: View {
             VStack(alignment: .leading, spacing: 1) {
                 Text(org.name)
                     .font(.system(size: 13))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                 if let raw = org.email {
                     let display = raw.hasPrefix("mailto:") ? String(raw.dropFirst(7)) : raw
                     let dest = URL(string: raw.hasPrefix("mailto:") ? raw : "mailto:\(raw)")
                     if let url = dest {
                         Link(display, destination: url)
                             .font(.system(size: 11.5))
-                            .foregroundColor(Color.accentColor)
+                            .foregroundColor(Color.glanceAccentText)
                             .lineLimit(1)
                             .truncationMode(.middle)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     } else {
                         Text(display)
                             .font(.system(size: 11.5))
-                            .foregroundColor(Color.mbText2(scheme))
+                            .foregroundColor(Color.glanceInk2)
                             .lineLimit(1)
                             .truncationMode(.middle)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -270,7 +270,7 @@ struct DetailPanelView: View {
                 AvatarStackView(people: event.attendees.map(\.name), max: 5, size: 22)
                 Text("\(event.attendees.count) attendees")
                     .font(.system(size: 12))
-                    .foregroundColor(Color.mbText2(scheme))
+                    .foregroundColor(Color.glanceInk2)
             }
             VStack(alignment: .leading, spacing: 4) {
                 ForEach(Array(shown.enumerated()), id: \.offset) { _, attendee in
@@ -280,7 +280,7 @@ struct DetailPanelView: View {
                             .frame(width: 6, height: 6)
                         Text(attendee.isCurrentUser ? "\(attendee.name) (you)" : attendee.name)
                             .font(.system(size: 12.5))
-                            .foregroundColor(Color.mbText1(scheme))
+                            .foregroundColor(Color.glanceInk1)
                     }
                 }
             }
@@ -294,15 +294,15 @@ struct DetailPanelView: View {
                 .padding(.vertical, 3)
                 .background(Color.mbChip(scheme))
                 .clipShape(Capsule())
-                .foregroundColor(Color.mbText2(scheme))
+                .foregroundColor(Color.glanceInk2)
             }
         }
     }
 
     private func attendeeColor(_ status: MBEventAttendeeStatus) -> Color {
         switch status {
-        case .accepted:  return .green
-        case .tentative: return .orange
+        case .accepted:  return .glanceSuccess
+        case .tentative: return .glanceWarning
         default:         return .gray
         }
     }
@@ -312,7 +312,7 @@ struct DetailPanelView: View {
     private func notesRow(_ notes: String) -> some View {
         Text(notes)
             .font(.system(size: 12.5))
-            .foregroundColor(Color.mbText1(scheme))
+            .foregroundColor(Color.glanceInk1)
             .lineSpacing(3)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -367,11 +367,11 @@ private struct DetailActionRow: View {
         HStack(spacing: 12) {
             Image(systemName: icon)
                 .font(.system(size: 14))
-                .foregroundColor(Color.mbText1(scheme))
+                .foregroundColor(Color.glanceInk1)
                 .frame(width: 20, alignment: .center)
             Text(label)
                 .font(.system(size: 13))
-                .foregroundColor(Color.mbText1(scheme))
+                .foregroundColor(Color.glanceInk1)
             Spacer()
         }
         // Content padding: 14 pt keeps icon aligned with section title.
