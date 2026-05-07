@@ -9,19 +9,25 @@ struct GlanceStatusIcon: View {
     @State private var pulseOpacity: Double = 1.0
 
     private static let pt: CGFloat = 22
-    private static let s:  CGFloat = pt / 1024
+    // Dot: fixed 4 pt diameter, center at the SVG circle position (cx=850, cy=466 in 1024 space)
+    private static let dotDiameter: CGFloat = 4
+    private static let dotCenterX:  CGFloat = 850.0 / 1024 * pt   // ≈ 18.3
+    private static let dotCenterY:  CGFloat = 466.0 / 1024 * pt   // ≈ 10.0
 
     var body: some View {
-        let s = Self.s
         ZStack(alignment: .topLeading) {
             Image(nsImage: Self.gImage)
                 .resizable()
                 .frame(width: Self.pt, height: Self.pt)
 
+            let d = Self.dotDiameter
             Circle()
-                .fill(isMeetingActive ? Color.glanceAccent : Color.primary)
-                .frame(width: 112 * s, height: 112 * s)
-                .offset(x: (850 - 56) * s, y: (466 - 56) * s)
+                .fill(isMeetingActive
+                      ? Color.glanceAccent
+                      : Color(nsColor: .labelColor))
+                .frame(width: d, height: d)
+                .offset(x: Self.dotCenterX - d / 2,
+                        y: Self.dotCenterY - d / 2)
                 .opacity(isMeetingActive ? pulseOpacity : 1)
         }
         .frame(width: Self.pt, height: Self.pt)
