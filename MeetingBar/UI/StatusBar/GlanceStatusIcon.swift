@@ -22,13 +22,11 @@ struct GlanceStatusIcon: View {
 
             let d = Self.dotDiameter
             Circle()
-                .fill(isMeetingActive
-                      ? Color.glanceAccent
-                      : Color(nsColor: .labelColor))
+                .fill(Color.glanceAccent)
                 .frame(width: d, height: d)
                 .offset(x: Self.dotCenterX - d / 2,
                         y: Self.dotCenterY - d / 2)
-                .opacity(isMeetingActive ? pulseOpacity : 1)
+                .opacity(isMeetingActive ? pulseOpacity : 0.35)
         }
         .frame(width: Self.pt, height: Self.pt)
         .onAppear { if isMeetingActive { startPulse() } }
