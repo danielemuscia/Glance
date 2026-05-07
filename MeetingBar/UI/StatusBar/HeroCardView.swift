@@ -65,23 +65,23 @@ struct HeroCardView: View {
 
                 Text(event.title)
                     .font(.system(size: 17, weight: .semibold))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                     .lineLimit(1)
 
                 HStack(spacing: 8) {
                     Text(timeString)
                         .font(.system(size: 12).monospacedDigit())
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                         .fixedSize()
 
                     if let loc = event.location, !loc.isEmpty {
-                        Text("·").foregroundColor(Color.mbText2(scheme).opacity(0.5)).fixedSize()
+                        Text("·").foregroundColor(Color.glanceInk2.opacity(0.5)).fixedSize()
                         HStack(spacing: 4) {
                             Image(systemName: "mappin").font(.system(size: 10))
                             Text(loc).lineLimit(1)
                         }
                         .font(.system(size: 12))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                     }
                 }
                 .lineLimit(1)
@@ -118,7 +118,7 @@ struct HeroCardView: View {
                 AvatarStackView(people: event.attendees.map(\.name), max: 5, size: 20)
                 Text("\(event.attendees.count) attendees")
                     .font(.system(size: 11.5))
-                    .foregroundColor(Color.mbText2(scheme))
+                    .foregroundColor(Color.glanceInk2)
                 Spacer()
             }
             .padding(.top, 10)

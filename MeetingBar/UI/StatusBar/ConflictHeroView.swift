@@ -70,22 +70,22 @@ struct ConflictHeroView: View {
             VStack(alignment: .leading, spacing: 1) {
                 Text(event.title)
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(Color.mbText1(scheme))
+                    .foregroundColor(Color.glanceInk1)
                     .lineLimit(1)
 
                 HStack(spacing: 6) {
                     Text(timeString(for: event))
                         .font(.system(size: 11.5).monospacedDigit())
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                         .fixedSize()
                     if let loc = event.location, !loc.isEmpty {
-                        Text("·").foregroundColor(Color.mbText2(scheme).opacity(0.5))
+                        Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
                         HStack(spacing: 4) {
                             Image(systemName: "mappin").font(.system(size: 10))
                             Text(loc).lineLimit(1)
                         }
                         .font(.system(size: 11.5))
-                        .foregroundColor(Color.mbText2(scheme))
+                        .foregroundColor(Color.glanceInk2)
                     }
                 }
                 .lineLimit(1)

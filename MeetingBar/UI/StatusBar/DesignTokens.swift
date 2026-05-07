@@ -5,12 +5,7 @@ import SwiftUI
 
 extension Color {
     // Text hierarchy (light/dark adaptive)
-    static func mbText1(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? .white.opacity(0.95) : .black.opacity(0.92)
-    }
-    static func mbText2(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? .white.opacity(0.60) : .black.opacity(0.60)
-    }
+    // mbText1 and mbText2 replaced by glanceInk1/glanceInk2 in Glance.swift.
     static func mbText3(_ scheme: ColorScheme) -> Color {
         scheme == .dark ? .white.opacity(0.42) : .black.opacity(0.42)
     }
