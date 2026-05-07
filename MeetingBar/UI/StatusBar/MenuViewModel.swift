@@ -38,6 +38,11 @@ final class MenuViewModel: ObservableObject {
         return events.first { $0.id == id }
     }
 
+    var hasMeetingNow: Bool {
+        let now = Date()
+        return events.contains { $0.startDate <= now && $0.endDate > now }
+    }
+
     func joinNextMeeting() { onJoinNext?() }
     func createMeeting() { onCreateMeeting?() }
     func openPreferences() { onOpenPreferences?() }
