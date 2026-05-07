@@ -8,12 +8,7 @@ struct StatusBarLabelView: View {
 
     var body: some View {
         HStack(spacing: 4) {
-            if let icon = model.statusBarLabel.icon {
-                Image(nsImage: icon)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 16, height: 16)
-            }
+            GlanceStatusIcon(isMeetingActive: model.hasMeetingNow)
             if !model.statusBarLabel.title.isEmpty {
                 if model.statusBarLabel.timeUnderTitle {
                     VStack(alignment: .leading, spacing: -1) {
