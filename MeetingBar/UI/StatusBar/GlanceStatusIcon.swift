@@ -42,7 +42,7 @@ struct GlanceStatusIcon: View {
                         green:   isDark ? 0xA0 / 255 : 0x5C / 255,
                         blue:    1, alpha: 1).setFill()
             }
-            NSBezierPath(ovalIn: CGRect(x: 794, y: 410, width: 112, height: 112)).fill()
+            NSBezierPath(ovalIn: CGRect(x: 738, y: 354, width: 224, height: 224)).fill()
             return true
         }
         if !accentDot { image.isTemplate = true }
