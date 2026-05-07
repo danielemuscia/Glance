@@ -29,10 +29,10 @@ enum TitleTruncationRules {
 enum Links {
     static let patreon = URL(string: "https://www.patreon.com/meetingbar")!
     static let buymeacoffee = URL(string: "https://www.buymeacoffee.com/meetingbar")!
-    static let github = URL(string: "https://github.com/leits/MeetingBar")!
+    static let github = URL(string: "https://github.com/danielemuscia/Glance")!
     static let telegram = URL(string: "https://t.me/leits")!
     static let twitter = URL(string: "https://twitter.com/leits_dev")!
-    static let emailMe = URL(string: "mailto:leits.dev@gmail.com?subject=MeetingBar")!
+    static let emailMe = URL(string: "mailto:leits.dev@gmail.com?subject=Glance")!
     static let calendarPreferences = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Calendars")!
     static let rateAppInAppStore = URL(string: "itms-apps://apps.apple.com/app/id1532419400?action=write-review")!
 }

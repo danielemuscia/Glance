@@ -57,11 +57,11 @@ struct MenuDropdownView: View {
                 bookmarksSection
             }
             MenuSeparator()
-            ActionRowView(icon: "video",  label: "Join next event meeting", kbd: kbd(for: .joinEventShortcut), action: onJoinNext)
-            ActionRowView(icon: "plus",   label: "Create meeting",           kbd: kbd(for: .createMeetingShortcut), action: onCreateMeeting)
+            ActionRowView(icon: "video", label: "Join next event meeting", kbd: kbd(for: .joinEventShortcut), action: onJoinNext)
+            ActionRowView(icon: "plus", label: "Create meeting", kbd: kbd(for: .createMeetingShortcut), action: onCreateMeeting)
             MenuSeparator()
-            ActionRowView(icon: "gear",   label: "Preferences…",             kbd: "⌘,", action: onPreferences)
-            ActionRowView(icon: "power",  label: "Quit MeetingBar",          kbd: "⌘Q", action: onQuit)
+            ActionRowView(icon: "gear", label: "Preferences…", kbd: "⌘,", action: onPreferences)
+            ActionRowView(icon: "power", label: "status_bar_quit".loco(), kbd: "⌘Q", action: onQuit)
             Spacer(minLength: 6)
         }
     }

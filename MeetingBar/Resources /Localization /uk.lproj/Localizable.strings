@@ -1,6 +1,6 @@
 /*
   Localizable.strings
-  MeetingBar
+  Glance
 
   Created by Andrii Leitsius on 23.04.2021.
   Copyright © 2021 Andrii Leitsius. All rights reserved.
@@ -20,9 +20,9 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "Налаштування MeetingBar";
-"window_title_onboarding" = "Ласкаво просимо у MeetingBar";
-"windows_title_changelog" = "Що нового у MeetingBar";
+"window_title_preferences" = "Налаштування Glance";
+"window_title_onboarding" = "Ласкаво просимо у Glance";
+"windows_title_changelog" = "Що нового у Glance";
 
 // MARK: - Preferences tabs
 
@@ -44,7 +44,7 @@
 "preferences_general_shortcut_join_next" = "Долучитись до наступної зустрічі:";
 "preferences_general_shortcut_join_from_clipboard" = "Долучитись до зустрічі з буфера обміну:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "Показати/сховати заголовок у смузі меню:";
-"preferences_general_meeting_bar_description" = "MeetingBar – це застосунок з відкритим кодом,\nстворений Андрієм Лейцюсь 🇺🇦\nДля більш плавних та зручних онлайн-зустрічей";
+"preferences_general_meeting_bar_description" = "Glance – це застосунок з відкритим кодом,\nстворений Андрієм Лейцюсь 🇺🇦\nДля більш плавних та зручних онлайн-зустрічей";
 "preferences_general_external_patronage" = "Підтримати";
 "preferences_general_external_contact" = "Зв'язатись";
 "preferences_general_patron_title" = "Стати патроном";
@@ -52,7 +52,7 @@
 "preferences_general_patron_six_months" = "6 місяців – 5,99 USD";
 "preferences_general_patron_twelve_months" = "12 місяців – 11,99 USD";
 "preferences_general_patron_description" = "Це одноразові платежі, які не будуть повторюватись автоматично.";
-"preferences_general_patron_thank_for_purchase" = "Дякую! Ви підтримали MeetingBar на %d місяців 🎉";
+"preferences_general_patron_thank_for_purchase" = "Дякую! Ви підтримали Glance на %d місяців 🎉";
 "preferences_general_patron_restore_purchases" = "Відновити платежі";
 "preferences_general_feedback_title" = "Якщо у Вас є запитання або ідеї,\nпросто напишіть мені:";
 "preferences_general_feedback_email" = "Ел. пошта";
@@ -223,7 +223,7 @@
 "status_bar_whats_new" = "Що нового?";
 "status_bar_rate_app" = "Оцінити застосунок";
 "status_bar_preferences" = "Налаштування";
-"status_bar_quit" = "Вийти з MeetingBar";
+"status_bar_quit" = "Вийти з Glance";
 "status_bar_no_title" = "Без заголовка";
 "status_bar_event_status_now" = "триває (ще %@)";
 "status_bar_event_status_in" = "через %@";
@@ -235,9 +235,9 @@
 
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Привіт! MeetingBar настільки простий, що майже все вже готово.";
+"welcome_screen_greeting_main_title" = "Привіт! Glance настільки простий, що майже все вже готово.";
 "welcome_screen_greeting_additional_title" = "Зробімо його на 100% вашим!";
-"welcome_screen_login_launch_toggle_title" = "Запускати MeetingBar при логіні";
+"welcome_screen_login_launch_toggle_title" = "Запускати Glance при логіні";
 "welcome_screen_shortcut_next_meeting_title" = "Приєднуватись до зустрічей з наступної події зі скороченням:";
 "welcome_screen_ad_hoc_meeting_title" = "Створювати зустріч у ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "зі скороченням:";
@@ -253,7 +253,7 @@
 "access_screen_access_denied_title" = "Ой леле! Схоже, Ви не дозволили доступ до календарів.";
 "access_screen_access_screen_access_denied_go_to_title" = "Відкрийте";
 "access_screen_access_denied_system_preferences_button" = "Системні параметри";
-"access_screen_access_denied_checkbox_title" = "і поставте прапорець біля MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "і поставте прапорець біля Glance.";
 "access_screen_access_denied_relaunch_title" = "Після цього вам потрібно перезапустити застосунок, щоб продовжити налаштування.";
 "access_screen_access_granted_title" = "Запит на доступ до календарів…";
 "access_screen_access_granted_click_ok_title" = "Натисніть \"OK\" у вікні від MacOS.";
@@ -265,7 +265,7 @@
 "access_screen_provider_gcalendar_data_source" = "Використовувати дані напряму з Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "Лише один об. запис Google";
 "access_screen_provider_gcalendar_sign_in_title" = "Вхід через Google";
-"access_screen_provider_gcalendar_sign_in_description" = "Надайте MeetingBar доступ до вашого календаря у вікні браузеру";
+"access_screen_provider_gcalendar_sign_in_description" = "Надайте Glance доступ до вашого календаря у вікні браузеру";
 "access_screen_try_again" = "Спробувати знову";
 
 // MARK: - Shared
@@ -277,7 +277,7 @@
 "general_three_minute_before" = "за 3 хвилини до початку";
 "general_five_minute_before" = "за 5 хвилин до початку";
 "shared_send_notification_no_alert_style_tip" = "Примітка: Сповіщення налаштовано на банер, тому вони з’являються ненадовго, перш ніж зникнути. Щоб вони залишалися на екрані, доки ви їх не закриєте, перемкніться до опції «Сповіщення» в налаштуваннях сповіщень macOS.";
-"shared_send_notification_disabled_tip" = "⚠️ Сповіщення від MeetingBar вимкнені у системних параметрах. Будь ласка, увімкніть їх, щоб не проґавити зустріч.";
+"shared_send_notification_disabled_tip" = "⚠️ Сповіщення від Glance вимкнені у системних параметрах. Будь ласка, увімкніть їх, щоб не проґавити зустріч.";
 "shared_automatic_event_join_toggle" = "Автоматично долучитись до наступної зустрічі";
 "shared_automatic_event_join_tip" = "Це налаштування автоматично відкриє вашу наступну зустріч у вибраному застосунку чи браузері";
 
@@ -291,7 +291,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "Патронат MeetingBar";
+"store_patronage_title" = "Патронат Glance";
 "store_patronage_restore_success_message" = "Успішно відновлено";
 "store_patronage_restore_nothing_message" = "Нічого відновлювати";
 "store_patronage_purchase_success_message" = "Успішно оплачено. Дякую за підтримку!";

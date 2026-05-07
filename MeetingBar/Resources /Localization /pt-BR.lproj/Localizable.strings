@@ -1,6 +1,6 @@
 /*
   Localizable.strings
-  MeetingBar
+  Glance
 
   Created by Iran Garcia on 06.02.2024.
   Copyright © 2021 Andrii Leitsius. All rights reserved.
@@ -24,9 +24,9 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "Preferências do MeetingBar";
-"window_title_onboarding" = "Bem-vindo ao MeetingBar";
-"windows_title_changelog" = "MeetingBar – Novidades";
+"window_title_preferences" = "Preferências do Glance";
+"window_title_onboarding" = "Bem-vindo ao Glance";
+"windows_title_changelog" = "Glance – Novidades";
 
 // MARK: - Preferences tabs
 
@@ -48,7 +48,7 @@
 "preferences_general_shortcut_join_next" = "Entrar na próxima reunião:";
 "preferences_general_shortcut_join_from_clipboard" = "Entrar na reunião pelo link na área de transferência:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "Alternar visibilidade do título na barra de status:";
-"preferences_general_meeting_bar_description" = "MeetingBar é um aplicativo Open Source\ncriado por Andrii Leitsius 🇺🇦\nPara reuniões mais fluidas e fáceis";
+"preferences_general_meeting_bar_description" = "Glance é um aplicativo Open Source\ncriado por Andrii Leitsius 🇺🇦\nPara reuniões mais fluidas e fáceis";
 "preferences_general_external_patronage" = "Apoio";
 "preferences_general_external_contact" = "Contato";
 "preferences_general_patron_title" = "Torne-se um apoiador";
@@ -56,7 +56,7 @@
 "preferences_general_patron_six_months" = "6 meses – 5.99 USD";
 "preferences_general_patron_twelve_months" = "12 meses – 11.99 USD";
 "preferences_general_patron_description" = "Essas são compras únicas e não serão renovadas automaticamente.";
-"preferences_general_patron_thank_for_purchase" = "Obrigado! Você apoiou o MeetingBar por %d meses 🎉";
+"preferences_general_patron_thank_for_purchase" = "Obrigado! Você apoiou o Glance por %d meses 🎉";
 "preferences_general_patron_restore_purchases" = "Restaurar Compras";
 "preferences_general_feedback_title" = "Se você tiver alguma dúvida ou sugestão,\nsinta-se à vontade para entrar em contato:";
 "preferences_general_feedback_email" = "E-mail";
@@ -235,7 +235,7 @@
 "status_bar_whats_new" = "O que há de novo?";
 "status_bar_rate_app" = "Avaliar o aplicativo";
 "status_bar_preferences" = "Preferências";
-"status_bar_quit" = "Sair do MeetingBar";
+"status_bar_quit" = "Sair do Glance";
 "status_bar_no_title" = "Sem título";
 "status_bar_event_status_now" = "agora (%@ restante)";
 "status_bar_event_status_in" = "em %@";
@@ -246,9 +246,9 @@
 "status_bar_error_app_link_message" = "Verifique se você tem o %@ instalado ou abra esses links em um navegador da web nas preferências.";
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Olá! O MeetingBar é um aplicativo tão simples que tudo está quase pronto.";
+"welcome_screen_greeting_main_title" = "Olá! O Glance é um aplicativo tão simples que tudo está quase pronto.";
 "welcome_screen_greeting_additional_title" = "Vamos torná-lo 100% seu!";
-"welcome_screen_login_launch_toggle_title" = "Iniciar MeetingBar no login";
+"welcome_screen_login_launch_toggle_title" = "Iniciar Glance no login";
 "welcome_screen_shortcut_next_meeting_title" = "Entrar na próxima reunião com seu atalho:";
 "welcome_screen_ad_hoc_meeting_title" = "Criar reuniões ad hoc em ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "com seu atalho:";
@@ -264,7 +264,7 @@
 "access_screen_access_denied_title" = "Oops! Parece que você negou o acesso aos calendários.";
 "access_screen_access_screen_access_denied_go_to_title" = "Acesse";
 "access_screen_access_denied_system_preferences_button" = "Preferências do Sistema";
-"access_screen_access_denied_checkbox_title" = "e marque uma caixa de seleção perto de MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "e marque uma caixa de seleção perto de Glance.";
 "access_screen_access_denied_relaunch_title" = "Em seguida, inicie o aplicativo manualmente para continuar a configuração.";
 "access_screen_access_granted_title" = "Solicitando acesso aos calendários…";
 "access_screen_access_granted_click_ok_title" = "Clique em \"OK\" na janela pop-up do macOS.";
@@ -276,14 +276,14 @@
 "access_screen_provider_gcalendar_data_source" = "Obter dados diretamente do Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "Apenas uma conta do Google";
 "access_screen_provider_gcalendar_sign_in_title" = "Login do Google";
-"access_screen_provider_gcalendar_sign_in_description" = "Permita que o MeetingBar acesse seu calendário em uma janela do navegador";
+"access_screen_provider_gcalendar_sign_in_description" = "Permita que o Glance acesse seu calendário em uma janela do navegador";
 "access_screen_try_again" = "Tentar novamente";
 
 // MARK: - Shared
 
 "shared_send_notification_toggle" = "Enviar notificação para entrar na próxima reunião";
-"shared_send_notification_no_alert_style_tip" = "⚠️ Suas configurações de notificação do macOS para o MeetingBar não estão definidas como alerta. Faça isso se você quiser notificações persistentes.";
-"shared_send_notification_disabled_tip" = "⚠️ Suas configurações de notificação do macOS para o MeetingBar estão desativadas. Ative as notificações nas configurações do sistema macOS para acompanhar as reuniões.";
+"shared_send_notification_no_alert_style_tip" = "⚠️ Suas configurações de notificação do macOS para o Glance não estão definidas como alerta. Faça isso se você quiser notificações persistentes.";
+"shared_send_notification_disabled_tip" = "⚠️ Suas configurações de notificação do macOS para o Glance estão desativadas. Ative as notificações nas configurações do sistema macOS para acompanhar as reuniões.";
 "shared_automatic_event_join_toggle" = "Entrar automaticamente na próxima reunião";
 "shared_automatic_event_join_tip" = "Essa configuração abrirá automaticamente sua próxima reunião no aplicativo ou navegador configurado";
 
@@ -297,7 +297,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "Apoio ao MeetingBar";
+"store_patronage_title" = "Apoio ao Glance";
 "store_patronage_restore_success_message" = "Restaurado";
 "store_patronage_restore_nothing_message" = "Nada a restaurar";
 "store_patronage_purchase_success_message" = "Compra efetuada. Obrigado pelo seu apoio!";

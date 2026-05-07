@@ -30,7 +30,7 @@
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>com.googleusercontent.apps.$(GOOGLE_CLIENT_NUMBER)</string>
-					<string>meetingbar</string>
+					<string>glance</string>
 				</array>
 			</dict>
 		</array>

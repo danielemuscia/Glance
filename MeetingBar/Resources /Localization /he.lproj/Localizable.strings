@@ -7,7 +7,7 @@
 "create_meeting_error_title" = "לא ניתן ליצור פגישה חדשה";
 "next_meeting_empty_title" = "אין פגישות שתתרחשנה היום";
 "next_meeting_empty_message" = "נפלא! זה בדיוק הזמן להכין שוקו";
-"window_title_onboarding" = "ברוך בואך ל־MeetingBar";
+"window_title_onboarding" = "ברוך בואך ל־Glance";
 
 // MARK: - Preferences General
 
@@ -21,7 +21,7 @@
 "preferences_general_shortcut_join_next" = "הצטרפות לפגישה הבאה:";
 "preferences_general_shortcut_join_from_clipboard" = "הצטרפות לפגישה שבלוח הגזירים:";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "החלפת מצב הצגת הכותרת בשורת המצב:";
-"preferences_general_meeting_bar_description" = "MeetingBar הוא יישום בקוד פתוח\nשנוצר על ידי Andrii Leitsius 🇺🇦\nלפגישות מקוונות פשוטות וחלקות יותר";
+"preferences_general_meeting_bar_description" = "Glance הוא יישום בקוד פתוח\nשנוצר על ידי Andrii Leitsius 🇺🇦\nלפגישות מקוונות פשוטות וחלקות יותר";
 "preferences_general_external_patronage" = "Patronage";
 "preferences_general_external_contact" = "יצירת קשר";
 "preferences_general_patron_title" = "להפוך ל־Patron (מימון חודשי)";
@@ -31,7 +31,7 @@
 "preferences_general_patron_description" = "אלו רכישות חד־פעמיות והן לא תתחדשנה.";
 "general_ok" = "אישור";
 "preferences_tab_appearance" = "מראה";
-"preferences_general_patron_thank_for_purchase" = "תודה רבה! תמכת ב־MeetingBar למשך %d חודשים 🎉";
+"preferences_general_patron_thank_for_purchase" = "תודה רבה! תמכת ב־Glance למשך %d חודשים 🎉";
 "status_bar_submenu_attendees_status_unknown" = " [?]";
 "status_bar_error_apple_script_title" = "שגיאת AppleScript";
 "preferences_general_patron_restore_purchases" = "שחזור רכישות";
@@ -55,7 +55,7 @@
 "preferences_appearance_events_value_only_with_link" = "הצגת אלו עם קישורים פגישות בלבד";
 "preferences_appearance_status_bar_title" = "שורת מצב";
 "preferences_appearance_status_bar_icon_title" = "סמל";
-"preferences_appearance_status_bar_icon_app_icon_value" = " MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = " Glance";
 "preferences_appearance_status_bar_icon_calendar_icon_value" = " לוח שנה";
 "preferences_appearance_status_bar_icon_no_icon_value" = " ללא סמל";
 "preferences_appearance_status_bar_title_title" = "כותרת";
@@ -156,9 +156,9 @@
 
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "היי! MeetingBar הוא יישום כל כך פשוט שהכול כמעט מוכן.";
+"welcome_screen_greeting_main_title" = "היי! Glance הוא יישום כל כך פשוט שהכול כמעט מוכן.";
 "welcome_screen_greeting_additional_title" = "הבה נתאים אותו 100% אליך!";
-"welcome_screen_login_launch_toggle_title" = "הפעלת MeetingBar בכניסה למערכת";
+"welcome_screen_login_launch_toggle_title" = "הפעלת Glance בכניסה למערכת";
 "welcome_screen_shortcut_next_meeting_title" = "ניתן להצטרף לפגישת האירוע הבאה עם הקיצור שלך:";
 "welcome_screen_ad_hoc_meeting_title" = "יצירת ישיבות נקודתיות תחת ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "עם הקיצור שלך:";
@@ -180,7 +180,7 @@
 "access_screen_provider_gcalendar_data_source" = "משיכת נתונים ישירות מ־Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "חשבון Google אחד בלבד";
 "access_screen_provider_gcalendar_sign_in_title" = "כניסה ל־Google";
-"access_screen_provider_gcalendar_sign_in_description" = "נא לאפשר ל־MeetingBar לגשת ללוח השנה שלך בחלון דפדפן";
+"access_screen_provider_gcalendar_sign_in_description" = "נא לאפשר ל־Glance לגשת ללוח השנה שלך בחלון דפדפן";
 "access_screen_try_again" = "לנסות שוב";
 
 // MARK: - Shared
@@ -193,7 +193,7 @@
 "constants_create_meeting_service_url" = "כתובת משלך";
 "constants_meeting_service_zoom_native" = "Zoom טבעי";
 "shared_send_notification_no_alert_style_tip" = "לתשומת ליבך: התראות מוגדרות ככרזות, לכן הן מופיעות לזמן קצר לפני שנעלמות. כדי להשאיר אותן על המסך עד לסילוקן ידנית, יש להחליף להתראות בהגדרות ההתראה ב־macOS שלך.";
-"shared_send_notification_disabled_tip" = "⚠️ הגדרות ההתראות ב־macOS שלך עבור MeetingBar כבויות. יש להפעיל את ההתראות בהגדרות המערכת של macOS כדי לעקוב אחר פגישות.";
+"shared_send_notification_disabled_tip" = "⚠️ הגדרות ההתראות ב־macOS שלך עבור Glance כבויות. יש להפעיל את ההתראות בהגדרות המערכת של macOS כדי לעקוב אחר פגישות.";
 "shared_automatic_event_join_toggle" = "להצטרף אוטומטית בפגישת האירוע הבאה";
 "shared_automatic_event_join_tip" = "הגדרה זאת תפתח את הפגישה הבאה שלך ביישום או בדפדפן שהגדרת";
 "general_cancel" = "ביטול";
@@ -201,8 +201,8 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "העדפות MeetingBar";
-"windows_title_changelog" = "MeetingBar – מה חדש";
+"window_title_preferences" = "העדפות Glance";
+"windows_title_changelog" = "Glance – מה חדש";
 "preferences_tab_bookmarks" = "סימניות";
 "preferences_tab_calendars" = "לוחות שנה";
 "preferences_appearance_status_bar_title_dot_value" = "נקודה (•)";
@@ -221,7 +221,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "ה־Patronage של MeetingBar";
+"store_patronage_title" = "ה־Patronage של Glance";
 "store_patronage_restore_success_message" = "שוחזר";
 "store_patronage_restore_nothing_message" = "אין מה לשחזר";
 "store_patronage_purchase_success_message" = "הרכישה בוצעה. תודה רבה על התמיכה!";
@@ -293,12 +293,12 @@
 "status_bar_whats_new" = "מה חדש?";
 "status_bar_rate_app" = "דירוג היישומון";
 "status_bar_preferences" = "העדפות";
-"status_bar_quit" = "יציאה מ־MeetingBar";
+"status_bar_quit" = "יציאה מ־Glance";
 "status_bar_no_title" = "אין כותרת";
 "status_bar_event_status_now" = "עכשיו (%@ נותרו)";
 "status_bar_event_status_in" = "בעוד %@";
 "access_screen_access_denied_system_preferences_button" = "העדפות המערכת";
-"access_screen_access_denied_checkbox_title" = "ולבחור את תיבת הסימון שליד MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "ולבחור את תיבת הסימון שליד Glance.";
 "general_five_minute_before" = "5 דקות לפני";
 "constants_meeting_service_phone" = "מספר טלפון";
 "store_patronage_purchase_cloud_service_permission_denied_message" = "הגישה לפרטי שירות הענן אסורה";

@@ -8,9 +8,9 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "MeetingBar instellingen";
-"window_title_onboarding" = "Welkom bij MeetingBar";
-"windows_title_changelog" = "MeetingBar – Wat is er nieuw";
+"window_title_preferences" = "Glance instellingen";
+"window_title_onboarding" = "Welkom bij Glance";
+"windows_title_changelog" = "Glance – Wat is er nieuw";
 "preferences_tab_appearance" = "Verschijning";
 "preferences_tab_bookmarks" = "Bladwijzers";
 "preferences_tab_calendars" = "Agenda's";
@@ -72,10 +72,10 @@
 
 "preferences_tab_general" = "Algemeen";
 "preferences_general_shortcut_toggle_meeting_name_visibility" = "Schakel de zichtbaarheid van titels in de statusbalk:";
-"preferences_general_meeting_bar_description" = "MeetingBar is een open-source app\nGemaakt door Andrii Leitsius 🇺🇦\nVoor sneller en makkelijker online meetings";
+"preferences_general_meeting_bar_description" = "Glance is een open-source app\nGemaakt door Andrii Leitsius 🇺🇦\nVoor sneller en makkelijker online meetings";
 "preferences_general_external_patronage" = "Sponsor";
 "preferences_general_patron_title" = "Word een sponsor";
-"preferences_general_patron_thank_for_purchase" = "Bedankt! Je hebt MeetingBar gesteund voor % van de maanden";
+"preferences_general_patron_thank_for_purchase" = "Bedankt! Je hebt Glance gesteund voor % van de maanden";
 "preferences_general_patron_restore_purchases" = "Aankopen herstellen";
 "preferences_general_feedback_title" = "Als je vragen of feedback hebt,\nVoel je vrij om in contact te komen:";
 "preferences_general_feedback_email" = "E-mailadres";
@@ -108,7 +108,7 @@
 "preferences_appearance_events_declined_title" = "Afgewezen meetings:";
 "preferences_appearance_status_bar_next_event_toggle" = "Toon alleen meetings die beginnen binnen";
 "preferences_general_external_contact" = "Contact";
-"preferences_appearance_status_bar_icon_app_icon_value" = " MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = " Glance";
 "preferences_appearance_menu_title" = "Menu";
 "preferences_services_link_service_title" = "Open %@ links in";
 "preferences_services_create_meeting_title" = "Maak meetings met";
@@ -207,7 +207,7 @@
 "notification_next_meeting_dismissed_message" = "Je kan afgewezen niet verwijderen uit snelle acties";
 "status_bar_submenu_status_accepted" = " 👍 Geaccepteerd";
 "access_screen_provider_gcalendar_sign_in_title" = "Google Sign In";
-"access_screen_provider_gcalendar_sign_in_description" = "Geef MeetingBar toegang tot je agenda in het venster van de webbrowser";
+"access_screen_provider_gcalendar_sign_in_description" = "Geef Glance toegang tot je agenda in het venster van de webbrowser";
 
 // MARK: - Shared
 
@@ -245,7 +245,7 @@
 
 "access_screen_access_denied_title" = "Oeps! Het lijkt erop dat je de toegang tot agenda's hebt geweigerd.";
 "access_screen_access_screen_access_denied_go_to_title" = "Ga naar";
-"access_screen_access_denied_checkbox_title" = "en kies een checkbox in de buurt van MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "en kies een checkbox in de buurt van Glance.";
 "access_screen_access_denied_relaunch_title" = "Start vervolgens de app handmatig om door te gaan met de installatie.";
 "access_screen_access_granted_title" = "Toegang tot agenda's aanvragen…";
 "access_screen_provider_picker_label" = "Selecteer agendaprovider";
@@ -285,7 +285,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "MeetingBar sponsoring";
+"store_patronage_title" = "Glance sponsoring";
 "constants_browser_defaultBrowser" = "Standaard webbrowser";
 "store_patronage_restore_success_message" = "Hersteld";
 "store_patronage_purchase_client_invalid_message" = "Het is niet toegestaan om de betaling uit te voeren";
@@ -300,7 +300,7 @@
 "link_url_cant_open_message" = "Zorg ervoor dat %@ is geïnstalleerd, of open dergelijke links in een webbrowser vanuit de voorkeuren.";
 "status_bar_submenu_location_title" = "Plaats:";
 "status_bar_submenu_attendees_no_name" = "Anonieme deelnemer";
-"status_bar_quit" = "Stop MeetingBar";
+"status_bar_quit" = "Stop Glance";
 "status_bar_submenu_email_attendees" = "E-mail deelnemers";
 "status_bar_submenu_undismiss_meeting" = "Verwijder afwijzingen";
 "status_bar_submenu_copy_meeting_link" = "Meetinglink kopiëren";
@@ -316,14 +316,14 @@
 "status_bar_event_status_in" = "in %@";
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Hi! MeetingBar is zo'n eenvoudige app dat alles bijna klaar is.";
+"welcome_screen_greeting_main_title" = "Hi! Glance is zo'n eenvoudige app dat alles bijna klaar is.";
 "welcome_screen_shortcut_next_meeting_title" = "Neem deel aan de volgende meeting met je snelkoppeling:";
 "welcome_screen_greeting_additional_title" = "Laten we het 100% van jou maken!";
 "welcome_screen_ad_hoc_meeting_title" = "Creëer ad-hocmeeting in ";
-"welcome_screen_login_launch_toggle_title" = "Start MeetingBar bij inloggen";
+"welcome_screen_login_launch_toggle_title" = "Start Glance bij inloggen";
 "welcome_screen_setup_calendar_title" = "Agenda's instellen";
 "access_screen_provider_gcalendar_data_source" = "Ontvang gegevens rechtstreeks uit Google Calendar";
-"shared_send_notification_disabled_tip" = "⚠️ Je macOS meldingsinstellingen voor MeetingBar zijn uitgeschakeld. Schakel meldingen in de macOS systeeminstellingen in om meetings bij te houden.";
+"shared_send_notification_disabled_tip" = "⚠️ Je macOS meldingsinstellingen voor Glance zijn uitgeschakeld. Schakel meldingen in de macOS systeeminstellingen in om meetings bij te houden.";
 "shared_automatic_event_join_tip" = "Met deze instelling wordt je volgende meeting automatisch geopend in je geconfigureerde app of webbrowser";
 "preferences_appearance_status_bar_ongoing_title" = "Zichtbaarheid van lopende evenementen:";
 "preferences_appearance_status_bar_ongoing_time_immediate_value" = "verbergen na start";

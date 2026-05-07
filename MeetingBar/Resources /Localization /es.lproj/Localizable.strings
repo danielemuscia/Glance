@@ -1,6 +1,6 @@
 /* 
   Localizable.strings
-  MeetingBar
+  Glance
 
   Copyright © 2021 Andrii Leitsius. All rights reserved.
 */
@@ -23,9 +23,9 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "Preferencias de MeetingBar";
-"window_title_onboarding" = "Bienvenido a MeetingBar";
-"windows_title_changelog" = "MeetingBar - Novedades";
+"window_title_preferences" = "Preferencias de Glance";
+"window_title_onboarding" = "Bienvenido a Glance";
+"windows_title_changelog" = "Glance - Novedades";
 
 // MARK: - Preferences tabs
 
@@ -55,7 +55,7 @@
 "preferences_general_patron_six_months" = "6 meses - 5.99 USD";
 "preferences_general_patron_twelve_months" = "12 meses - 11.99 USD";
 "preferences_general_patron_description" = "Son compras únicas y no se renovarán automáticamente.";
-"preferences_general_patron_thank_for_purchase" = "¡Gracias! Has dado soporte a MeetingBar para %d meses 🎉";
+"preferences_general_patron_thank_for_purchase" = "¡Gracias! Has dado soporte a Glance para %d meses 🎉";
 "preferences_general_patron_restore_purchases" = "Restaurar compras";
 "preferences_general_feedback_title" = "Si tienes alguna pregunta o comentario,\nno dudes en ponerte en contacto:";
 "preferences_general_feedback_email" = "Correo electrónico";
@@ -234,7 +234,7 @@
 "status_bar_whats_new" = "¿Qué hay nuevo?";
 "status_bar_rate_app" = "Calificar aplicación";
 "status_bar_preferences" = "Preferencias";
-"status_bar_quit" = "Quitar MeetingBar";
+"status_bar_quit" = "Quitar Glance";
 "status_bar_no_title" = "Sin título";
 "status_bar_event_status_now" = "ahora (%@ restante/s)";
 "status_bar_event_status_in" = "en %@";
@@ -246,9 +246,9 @@
 
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "¡Hola! MeetingBar es una aplicación tan sencilla que casi todo está listo.";
+"welcome_screen_greeting_main_title" = "¡Hola! Glance es una aplicación tan sencilla que casi todo está listo.";
 "welcome_screen_greeting_additional_title" = "¡Hagámosla 100% tuya!";
-"welcome_screen_login_launch_toggle_title" = "Iniciar MeetingBar al inicio de sesión";
+"welcome_screen_login_launch_toggle_title" = "Iniciar Glance al inicio de sesión";
 "welcome_screen_shortcut_next_meeting_title" = "Únete a la siguiente reunión del evento con su propio atajo:";
 "welcome_screen_ad_hoc_meeting_title" = "Crea reuniones ad hoc en ";
 "welcome_screen_shortcut_ad_hoc_meeting_title" = "con tu propio atajo:";
@@ -264,7 +264,7 @@
 "access_screen_access_denied_title" = "¡Ups! Parece que has denegado el acceso a los calendarios.";
 "access_screen_access_screen_access_denied_go_to_title" = "Ir a";
 "access_screen_access_denied_system_preferences_button" = "Preferencias de sistema";
-"access_screen_access_denied_checkbox_title" = "y selecciona una casilla cerca de MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "y selecciona una casilla cerca de Glance.";
 "access_screen_access_denied_relaunch_title" = "Entonces lanza la aplicación manualmente para continuar con la configuración.";
 "access_screen_access_granted_title" = "Solicitando acceso a los calendarios…";
 "access_screen_access_granted_click_ok_title" = "Haz clic en \"Aceptar\" en la ventana emergente de macOS.";
@@ -276,15 +276,15 @@
 "access_screen_provider_gcalendar_data_source" = "Obtener datos directamente desde Google Calendar";
 "access_screen_provider_gcalendar_number_of_accounts" = "Solo una cuenta de Google";
 "access_screen_provider_gcalendar_sign_in_title" = "Google Sign In";
-"access_screen_provider_gcalendar_sign_in_description" = "Permitir a MeetingBar acceder a tu calendario en la ventana del navegador";
+"access_screen_provider_gcalendar_sign_in_description" = "Permitir a Glance acceder a tu calendario en la ventana del navegador";
 "access_screen_try_again" = "Intentar de nuevo";
 
 // MARK: - Shared
 
 "shared_send_notification_toggle" = "Enviar una notificación del sistema";
 "shared_fullscreen_notification_toggle" = "Mostrar una notificación a pantalla completa";
-"shared_send_notification_no_alert_style_tip" = "⚠️ Tus configuraciones de notificación de macOS para MeetingBar no están establecidas como alertas. Cámbialo si deseas notificaciones persistentes. Nota: Las notificaciones estan puestas en \"Banners\", Asi que aparecen brevemente antes de irse, para mantenerlas en la pantalla hasta que se vayan cambia a Alertas en la configuraciòn de notificaciones en tu MacOs.";
-"shared_send_notification_disabled_tip" = "⚠️ Tus configuraciones de notificación de macOS para MeetingBar están desactivadas. Activa las notificaciones en la configuración del sistema de macOS para llevar un seguimiento de las reuniones.";
+"shared_send_notification_no_alert_style_tip" = "⚠️ Tus configuraciones de notificación de macOS para Glance no están establecidas como alertas. Cámbialo si deseas notificaciones persistentes. Nota: Las notificaciones estan puestas en \"Banners\", Asi que aparecen brevemente antes de irse, para mantenerlas en la pantalla hasta que se vayan cambia a Alertas en la configuraciòn de notificaciones en tu MacOs.";
+"shared_send_notification_disabled_tip" = "⚠️ Tus configuraciones de notificación de macOS para Glance están desactivadas. Activa las notificaciones en la configuración del sistema de macOS para llevar un seguimiento de las reuniones.";
 "shared_automatic_event_join_toggle" = "Auto-unirse a la próxima reunión de evento";
 "shared_automatic_event_join_tip" = "Este ajuste automáticamente abrirá tu próxima reunión en la aplicación o navegador configurado";
 
@@ -299,7 +299,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "Patrocinio MeetingBar";
+"store_patronage_title" = "Patrocinio Glance";
 "store_patronage_restore_success_message" = "Restaurado";
 "store_patronage_restore_nothing_message" = "Nada para restaurar";
 "store_patronage_purchase_success_message" = "Compra realizada. ¡Gracias por tu apoyo!";

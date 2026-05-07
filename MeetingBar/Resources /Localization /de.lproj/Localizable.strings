@@ -1,7 +1,7 @@
 
 
 "link_url_cant_open_message" = "Sicherstellen, dass %@ installiert ist oder in den Einstellungen festlegen, dass diese Links im Webbrowser geöffnet werden.";
-"preferences_general_meeting_bar_description" = "MeetingBar ist eine quelloffene App,\ndie von Andrii Leitsius 🇺🇦 für reibungslosere \nund einfachere Online-Meetings entwickelt wurde.";
+"preferences_general_meeting_bar_description" = "Glance ist eine quelloffene App,\ndie von Andrii Leitsius 🇺🇦 für reibungslosere \nund einfachere Online-Meetings entwickelt wurde.";
 
 // MARK: - Notifications
 
@@ -68,7 +68,7 @@
 "preferences_appearance_status_bar_icon_no_icon_value" = " Kein Symbol";
 "preferences_appearance_status_bar_icon_specific_icon_value" = " Meeting-Symbol (z.B. MS Teams)";
 "preferences_appearance_status_bar_icon_calendar_icon_value" = " Kalender";
-"preferences_appearance_status_bar_icon_app_icon_value" = " MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = " Glance";
 "preferences_appearance_status_bar_icon_title" = "Icon";
 "preferences_appearance_status_bar_title" = "Menüleiste";
 "preferences_appearance_events_value_with_strikethrough" = "durchgestrichen anzeigen";
@@ -94,7 +94,7 @@
 "preferences_appearance_events_title" = "Ereignisse";
 "preferences_general_feedback_title" = "Bei Fragen oder Feedback\nkannst Du mich gerne kontaktieren:";
 "preferences_general_patron_restore_purchases" = "Käufe wiederherstellen";
-"preferences_general_patron_thank_for_purchase" = "Danke! Du hast MeetingBar für %d Monate unterstützt. 🎉";
+"preferences_general_patron_thank_for_purchase" = "Danke! Du hast Glance für %d Monate unterstützt. 🎉";
 "preferences_general_patron_description" = "Es handelt sich um einmalige Käufe, die sich nicht automatisch verlängern.";
 "preferences_services_supported_links_mailback" = "Falls der benötigte Service fehlt, bitte eine E-Mail an die Entwickler senden";
 "preferences_general_feedback_email" = "E-Mail";
@@ -120,12 +120,12 @@
 // MARK: - Preferences tabs
 
 "preferences_tab_general" = "Allgemein";
-"windows_title_changelog" = "MeetingBar-Neuigkeiten";
-"window_title_onboarding" = "Willkommen bei MeetingBar";
+"windows_title_changelog" = "Glance-Neuigkeiten";
+"window_title_onboarding" = "Willkommen bei Glance";
 
 // MARK: - Window titles
 
-"window_title_preferences" = "MeetingBar-Einstellungen";
+"window_title_preferences" = "Glance-Einstellungen";
 "next_meeting_empty_message" = "Juhu! Es ist Zeit, Kakao zu machen";
 "next_meeting_empty_title" = "Heute finden keine weiteren Meetings statt";
 "create_meeting_error_message" = "Benutzerdefinierte URL „%@“ fehlt oder ist ungültig. ";
@@ -138,7 +138,7 @@
 "general_cancel" = "Abbrechen";
 "general_ok" = "OK";
 "status_bar_no_title" = "Kein Titel";
-"status_bar_quit" = "MeetingBar beenden";
+"status_bar_quit" = "Glance beenden";
 "status_bar_preferences" = "Einstellungen";
 "status_bar_whats_new" = "Was ist neu?";
 "status_bar_rate_app" = "App bewerten";
@@ -253,7 +253,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "MeetingBar Schirmherrschaft";
+"store_patronage_title" = "Glance Schirmherrschaft";
 "constants_meeting_service_phone" = "Telefonnummer";
 "constants_create_meeting_service_url" = "Benutzerdefinierte URL";
 
@@ -270,7 +270,7 @@
 "access_screen_access_granted_click_ok_title" = "Im macOS-Popup auf „OK“ klicken.";
 "access_screen_access_granted_title" = "Zugriff auf Kalender anfordern…";
 "access_screen_access_denied_relaunch_title" = "Anschließend die App manuell starten, um die Einrichtung fortzusetzen.";
-"access_screen_access_denied_checkbox_title" = "und aktiviere ein Kontrollkästchen bei MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "und aktiviere ein Kontrollkästchen bei Glance.";
 "access_screen_access_denied_system_preferences_button" = "Systemeinstellungen";
 "access_screen_access_screen_access_denied_go_to_title" = "Gehe zu";
 "shared_automatic_event_join_toggle" = "Automatisch zum nächsten Meeting beitreten";
@@ -279,7 +279,7 @@
 // MARK: - Access screen
 
 "access_screen_access_denied_title" = "Hoppla! Offenbar hast Du den Zugriff auf Kalender verweigert.";
-"calendars_screen_start_button" = "MeetingBar starten";
+"calendars_screen_start_button" = "Glance starten";
 "access_screen_provider_picker_label" = "Wähle den Kalender Anbieter aus";
 "access_screen_provider_macos_title" = "MacOS Kalender App";
 "access_screen_provider_macos_recommended" = "(empfohlen)";
@@ -288,19 +288,19 @@
 "access_screen_provider_gcalendar_data_source" = "Hole Daten direkt vom Google Kalender";
 "access_screen_provider_gcalendar_number_of_accounts" = "Nur ein Google Account";
 "access_screen_provider_gcalendar_sign_in_title" = "Google Sign In";
-"access_screen_provider_gcalendar_sign_in_description" = "Erlaube der App MeetingBar den Zugriff auf den Kalender im Browser-Fenster";
+"access_screen_provider_gcalendar_sign_in_description" = "Erlaube der App Glance den Zugriff auf den Kalender im Browser-Fenster";
 "access_screen_try_again" = "Neuer Versuch";
 
 // MARK: - Calendars screen
 
 "calendars_screen_select_calendar_title" = "Mindestens einen Kalender auswählen";
 "welcome_screen_setup_calendar_title" = "Kalender einrichten";
-"welcome_screen_login_launch_toggle_title" = "MeetingBar bei der Anmeldung starten";
+"welcome_screen_login_launch_toggle_title" = "Glance bei der Anmeldung starten";
 "welcome_screen_greeting_additional_title" = "Lass es uns komplett zu Deinem machen!";
 
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Hi! MeetingBar ist so eine simple App, dass schon fast alles vorbereitet ist.";
+"welcome_screen_greeting_main_title" = "Hi! Glance ist so eine simple App, dass schon fast alles vorbereitet ist.";
 "status_bar_error_app_link_title" = "Hoppla! Der Link kann nicht in der %@-App geöffnet werden";
 "status_bar_error_app_link_message" = "Sicherstellen, dass die %@-App installiert ist oder in den Einstellungen festlegen, dass diese Links im Webbrowser geöffnet werden.";
 "status_bar_error_apple_script_title" = "AppleScript-Fehler";
@@ -308,7 +308,7 @@
 "preferences_general_external_patronage" = "Schirmherrschaft";
 "store_patronage_purchase_cloud_service_revoked_message" = "Der Benutzer hat die Erlaubnis zur Nutzung dieses Cloud-Services widerrufen";
 "constants_meeting_service_zoom_native" = "Zoom native";
-"shared_send_notification_disabled_tip" = "⚠️Benachrichtigungen für MeetingBar sind derzeit in den Systemeinstellungen von macOS deaktiviert. Bitte die Benachrichtigungen im Bereich \"Mitteilungen\" für MeetingBar aktivieren um kein Meeting zu verpassen.";
+"shared_send_notification_disabled_tip" = "⚠️Benachrichtigungen für Glance sind derzeit in den Systemeinstellungen von macOS deaktiviert. Bitte die Benachrichtigungen im Bereich \"Mitteilungen\" für Glance aktivieren um kein Meeting zu verpassen.";
 "shared_send_notification_no_alert_style_tip" = "Hinweis: Benachrichtigungen sind als Banner eingestellt, deshalb erscheinen sie kurzzeitig, bevor sie wieder verschwinden. Damit die Benachrichtigungen bis zum Verwerfen sichtbar bleiben, müssen sie als Alarme in den macOS-Benachrichtungseinstellungen eingestellt werden.";
 "welcome_screen_shortcut_next_meeting_title" = "Am nächsten Meeting mit Tastaturkürzel teilnehmen:";
 "welcome_screen_ad_hoc_meeting_title" = "Ad-hoc-Meetings erstellen mit ";

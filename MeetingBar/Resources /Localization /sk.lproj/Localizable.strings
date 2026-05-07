@@ -11,7 +11,7 @@
 "general_one_minute_before" = "1 minútu predtým";
 "general_three_minute_before" = "3 minúty predtým";
 "general_five_minute_before" = "5 minút predtým";
-"window_title_onboarding" = "Víta Ťa MeetingBar";
+"window_title_onboarding" = "Víta Ťa Glance";
 
 // MARK: - Preferences General
 
@@ -21,8 +21,8 @@
 "status_bar_section_join_next_meeting" = "Pripojiť sa k ďalšiemu stretnutiu";
 // MARK: - Welcome screen
 
-"welcome_screen_greeting_main_title" = "Ahoj! MeetingBar je taká jednoduchá aplikácia, že je všetko takmer pripravené.";
-"welcome_screen_login_launch_toggle_title" = "Spustiť MeetingBar pri štarte";
+"welcome_screen_greeting_main_title" = "Ahoj! Glance je taká jednoduchá aplikácia, že je všetko takmer pripravené.";
+"welcome_screen_login_launch_toggle_title" = "Spustiť Glance pri štarte";
 "welcome_screen_greeting_additional_title" = "Prispôsob si apku úplne svojim potrebám!";
 "welcome_screen_shortcut_next_meeting_title" = "Pripojiť sa k ďalšiemu stretnutiu pomocou skratky:";
 "welcome_screen_ad_hoc_meeting_title" = "Vytvoriť k tomu stretnutie v ";
@@ -33,7 +33,7 @@
 // MARK: - Shared
 
 "shared_send_notification_toggle" = "Upozorniť systémovým hlásením";
-"shared_send_notification_disabled_tip" = "⚠️ Tvoje MacOS nastavenia hlásení pre MeetingBar sú vypnuté. Zapni upozornenia v Systémových nastaveniach macOS pre prehľad o stretnutiach.";
+"shared_send_notification_disabled_tip" = "⚠️ Tvoje MacOS nastavenia hlásení pre Glance sú vypnuté. Zapni upozornenia v Systémových nastaveniach macOS pre prehľad o stretnutiach.";
 "shared_automatic_event_join_toggle" = "Automaticky sa pripojiť k ďalšiemu stretnutiu";
 "shared_send_notification_no_alert_style_tip" = "Poznámka: Upozornenia sú nastavené ako bannery, takže sa krátko zobrazia a potom zmiznú. Ak chcete, aby zostali na obrazovke, kým ich nezrušíte, prepnite v nastaveniach upozornení v systéme macOS na možnosť Upozornenia.";
 "next_meeting_empty_title" = "Dnes nie sú žiadne naplánované stretnutia";
@@ -81,7 +81,7 @@
 "calendars_screen_select_calendar_title" = "Vyber aspoň jeden kalendár";
 "calendars_screen_start_button" = "Začať používať apku";
 "access_screen_access_granted_click_ok_title" = "Klikni na \"OK\" v kontextovom okne.";
-"access_screen_access_denied_checkbox_title" = "a zaškrtni políčko pre MeetingBar.";
+"access_screen_access_denied_checkbox_title" = "a zaškrtni políčko pre Glance.";
 "access_screen_access_denied_relaunch_title" = "Potom spusti aplikáciu manuálne a pokračuj v nastavovaní.";
 "access_screen_provider_picker_label" = "Vyber poskytovateľa kalendára";
 "access_screen_provider_macos_title" = "MacOS Kalendár aplikácia";
@@ -105,8 +105,8 @@
 
 // MARK: - Window titles
 
-"window_title_preferences" = "MeetingBar Predvoľby";
-"windows_title_changelog" = "MeetingBar - Čo je nové";
+"window_title_preferences" = "Glance Predvoľby";
+"windows_title_changelog" = "Glance - Čo je nové";
 
 // MARK: - Preferences tabs
 
@@ -127,7 +127,7 @@
 "preferences_general_patron_three_months" = "3 mesiace - 2,99 USD";
 "preferences_general_patron_six_months" = "6 mesiacov - 5,99 USD";
 "preferences_general_patron_description" = "Ide o jednorazové nákupy a nebudú sa automaticky obnovovať.";
-"preferences_general_patron_thank_for_purchase" = "Vďaka! MeetingBar podporený na %d mesiace(ov) 🎉";
+"preferences_general_patron_thank_for_purchase" = "Vďaka! Glance podporený na %d mesiace(ov) 🎉";
 "preferences_general_patron_restore_purchases" = "Obnovenie nákupov";
 "preferences_general_feedback_title" = "Ak máš akékoľvek otázky alebo pripomienky,\nNeváhaj ma kontaktovať:";
 "preferences_general_feedback_email" = "Email";
@@ -148,7 +148,7 @@
 "preferences_appearance_events_value_with_strikethrough" = "zobraziť s preškrtnutím";
 "preferences_appearance_status_bar_title" = "Lišta";
 "preferences_appearance_status_bar_icon_title" = "Ikona";
-"preferences_appearance_status_bar_icon_app_icon_value" = " . MeetingBar";
+"preferences_appearance_status_bar_icon_app_icon_value" = " . Glance";
 "preferences_appearance_status_bar_icon_calendar_icon_value" = " Kalendár";
 "preferences_appearance_status_bar_icon_specific_icon_value" = " Ikona konkrétnej udalosti (napr. MS Teams)";
 "preferences_appearance_status_bar_icon_no_icon_value" = " Bez ikony";
@@ -216,9 +216,9 @@
 "status_bar_hide_meeting_names" = "Skryť názov stretnutia";
 "status_bar_whats_new" = "Čo je nové?";
 "status_bar_rate_app" = "Ohodnotiť aplikáciu";
-"status_bar_quit" = "Ukončiť MeetingBar";
+"status_bar_quit" = "Ukončiť Glance";
 "shared_automatic_event_join_tip" = "Toto nastavenie automaticky otvorí nasledujúce stretnutie v nastavenej aplikácii alebo prehliadači";
-"preferences_general_meeting_bar_description" = "MeetingBar je open-source aplikácia\nvytvoril ju Andrii Leitsius 🇺🇦\nPre plynulejšie a jednoduchšie online stretnutia";
+"preferences_general_meeting_bar_description" = "Glance je open-source aplikácia\nvytvoril ju Andrii Leitsius 🇺🇦\nPre plynulejšie a jednoduchšie online stretnutia";
 "preferences_services_create_meeting_custom_url_placeholder" = "Zadaj platnú URL adresu (s http:// alebo https://)";
 "preferences_services_create_meeting_custom_url_value" = "Vlastná URL adresa";
 
@@ -277,7 +277,7 @@
 
 "access_screen_access_denied_title" = "Ups! Zdá sa, že bol odmietnutý prístup ku kalendárom.";
 "access_screen_provider_gcalendar_data_source" = "Získať údaje priamo z Google kalendára";
-"access_screen_provider_gcalendar_sign_in_description" = "Povoliť MeetingBar prístup ku kalendáru v okne prehliadača";
+"access_screen_provider_gcalendar_sign_in_description" = "Povoliť Glance prístup ku kalendáru v okne prehliadača";
 "access_screen_try_again" = "Skús to znova";
 "constants_meeting_service_phone" = "Telefónne číslo";
 
@@ -293,7 +293,7 @@
 
 // MARK: - Store
 
-"store_patronage_title" = "MeetingBar Podpora";
+"store_patronage_title" = "Glance Podpora";
 "store_patronage_restore_success_message" = "Obnovené";
 "store_patronage_purchase_success_message" = "Nákup uskutočnený. Díky za tvoju podporu!";
 "store_patronage_purchase_unknown_message" = "Neznáma chyba. Kontaktuj prosím podporu.";
