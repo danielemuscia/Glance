@@ -48,7 +48,7 @@ struct MenuDropdownView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            headerRow
+            BrandStripView(events: events)
             eventsSection
             if !Defaults[.bookmarks].isEmpty {
                 MenuSeparator()
@@ -62,21 +62,6 @@ struct MenuDropdownView: View {
             ActionRowView(icon: "power", label: "status_bar_quit".loco(), kbd: "⌘Q", action: onQuit)
             Spacer(minLength: 6)
         }
-    }
-
-    // MARK: - Header
-
-    private var headerRow: some View {
-        HStack {
-            Text(Date().formatted(.dateTime.weekday(.wide).month(.abbreviated).day()))
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(Color.glanceInk1)
-            Spacer()
-            IconButtonView(systemName: "arrow.clockwise", action: onReload)
-        }
-        .padding(.horizontal, 10)
-        .padding(.top, 12)
-        .padding(.bottom, 6)
     }
 
     // MARK: - Events
