@@ -6,26 +6,28 @@ struct GlanceStatusIcon: View {
     let isMeetingActive: Bool
     @State private var pulseOpacity: Double = 1.0
 
+    // SVG viewBox is 1024×1024; we render at 22 pt (standard macOS menu bar height)
+    private let side: CGFloat = 22
+
     var body: some View {
-        ZStack {
-            // G letterform drawn via Canvas so it responds to foreground style
+        let s = side / 1024
+
+        ZStack(alignment: .topLeading) {
             Canvas { ctx, size in
-                let scale = size.width / 1024.0
-                let path = glyphPath.applying(CGAffineTransform(scaleX: scale, y: scale))
-                ctx.fill(path, with: .foreground)
+                let cs = size.width / 1024
+                ctx.fill(
+                    glyphPath.applying(CGAffineTransform(scaleX: cs, y: cs)),
+                    with: .foreground
+                )
             }
 
-            // Dot — separate SwiftUI Circle so it can animate independently
-            GeometryReader { geo in
-                let s = geo.size.width / 1024.0
-                Circle()
-                    .fill(isMeetingActive ? Color.glanceAccent : Color.primary)
-                    .frame(width: 112 * s, height: 112 * s)
-                    .position(x: 850 * s, y: 466 * s)
-                    .opacity(isMeetingActive ? pulseOpacity : 1)
-            }
+            Circle()
+                .fill(isMeetingActive ? Color.glanceAccent : Color.primary)
+                .frame(width: 112 * s, height: 112 * s)
+                .offset(x: (850 - 56) * s, y: (466 - 56) * s)
+                .opacity(isMeetingActive ? pulseOpacity : 1)
         }
-        .frame(width: 22, height: 22)
+        .frame(width: side, height: side)
         .onAppear { if isMeetingActive { startPulse() } }
         .onChange(of: isMeetingActive) { active in
             if active { startPulse() } else { stopPulse() }
@@ -45,7 +47,7 @@ struct GlanceStatusIcon: View {
         withAnimation(.default) { pulseOpacity = 1.0 }
     }
 
-    // MARK: - Glyph path (SVG viewBox 0 0 1024 1024)
+    // MARK: - Glyph (SVG path, 1024×1024 coordinate space)
 
     private var glyphPath: Path {
         var p = Path()
