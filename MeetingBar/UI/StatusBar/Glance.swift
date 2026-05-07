@@ -3,6 +3,10 @@
 import SwiftUI
 
 extension Color {
+    // Text hierarchy — pair with mbText* if you want, or use these
+    static let glanceInk1 = Color.dynamic(light: 0x1A1A1A, dark: 0xF2F2F2)
+    static let glanceInk2 = Color.dynamic(light: 0x585652, dark: 0xA8A6A1)
+
     // Brand accent — lifted in dark for AA contrast
     static let glanceAccent     = Color.dynamic(light: 0x2C5CFF, dark: 0x7FA0FF)
     static let glanceAccentText = Color.dynamic(light: 0x1F47CC, dark: 0x9DB6FF)
