@@ -1,6 +1,6 @@
 // GlanceStatusIcon.swift — Menu bar icon: G letterform + indicator dot.
-// The G is rendered as a template NSImage (system handles light/dark automatically).
-// The dot is a separate SwiftUI Circle so it can be colored and animated independently.
+// Both shapes are rendered inside the template NSImage so light/dark is handled by the system.
+// When a meeting is active, a glanceAccent Circle overlays the dot position with a pulse animation.
 import SwiftUI
 import AppKit
 
@@ -9,24 +9,27 @@ struct GlanceStatusIcon: View {
     @State private var pulseOpacity: Double = 1.0
 
     private static let pt: CGFloat = 22
-    // Dot: fixed 4 pt diameter, center at the SVG circle position (cx=850, cy=466 in 1024 space)
-    private static let dotDiameter: CGFloat = 4
-    private static let dotCenterX:  CGFloat = 850.0 / 1024 * pt   // ≈ 18.3
-    private static let dotCenterY:  CGFloat = 466.0 / 1024 * pt   // ≈ 10.0
+    // Dot center in pt, matching SVG cx=850 cy=466 r=56 in a 1024 viewBox
+    private static let dotD: CGFloat = 112.0 / 1024 * pt  // ≈ 2.4 pt
+    private static let dotX: CGFloat = 850.0 / 1024 * pt  // center ≈ 18.3 pt
+    private static let dotY: CGFloat = 466.0 / 1024 * pt  // center ≈ 10.0 pt
 
     var body: some View {
         ZStack(alignment: .topLeading) {
+            // G + dot rendered as template — adapts to light/dark automatically
             Image(nsImage: Self.gImage)
                 .resizable()
                 .frame(width: Self.pt, height: Self.pt)
 
-            let d = Self.dotDiameter
-            Circle()
-                .fill(Color.glanceAccent)
-                .frame(width: d, height: d)
-                .offset(x: Self.dotCenterX - d / 2,
-                        y: Self.dotCenterY - d / 2)
-                .opacity(isMeetingActive ? pulseOpacity : 0.35)
+            // Accent overlay shown only when a meeting is active
+            if isMeetingActive {
+                let d = Self.dotD
+                Circle()
+                    .fill(Color.glanceAccent)
+                    .frame(width: d, height: d)
+                    .offset(x: Self.dotX - d / 2, y: Self.dotY - d / 2)
+                    .opacity(pulseOpacity)
+            }
         }
         .frame(width: Self.pt, height: Self.pt)
         .onAppear { if isMeetingActive { startPulse() } }
@@ -105,6 +108,10 @@ struct GlanceStatusIcon: View {
 
         NSColor.black.setFill()
         path.fill()
+
+        // Dot — SVG <circle cx="850" cy="466" r="56">
+        let dotPath = NSBezierPath(ovalIn: CGRect(x: 794, y: 410, width: 112, height: 112))
+        dotPath.fill()
 
         image.unlockFocus()
         image.isTemplate = true
