@@ -1,10 +1,21 @@
 // MenuPanelView.swift
-// Width fixed 380. Height dynamic (min 280, max 640 with scroll above).
+// Width fixed 380. Height tracks the actual content (capped at 640 with scroll).
 // Sticky bottom bar lives outside the ScrollView so it never scrolls away.
 import SwiftUI
 
+private struct ContentHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
+
 struct MenuPanelView: View {
     @ObservedObject var viewModel: MenuViewModel
+
+    @State private var contentHeight: CGFloat = 0
+
+    private static let maxScrollHeight: CGFloat = 640
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -20,9 +31,17 @@ struct MenuPanelView: View {
                                 onPreferences: { viewModel.openPreferences() }
                             )
                         }
+                        .background(
+                            GeometryReader { geo in
+                                Color.clear.preference(
+                                    key: ContentHeightKey.self,
+                                    value: geo.size.height
+                                )
+                            }
+                        )
                     }
                     .scrollContentBackground(.hidden)
-                    .frame(maxHeight: 640)
+                    .frame(height: min(contentHeight, Self.maxScrollHeight))
                     .onAppear { proxy.scrollTo("top", anchor: .top) }
                 }
 
@@ -31,6 +50,7 @@ struct MenuPanelView: View {
                     onPreferences: { viewModel.openPreferences() }
                 )
             }
+            .onPreferenceChange(ContentHeightKey.self) { contentHeight = $0 }
 
             if let event = viewModel.selectedEvent {
                 DetailPanelView(
@@ -41,8 +61,8 @@ struct MenuPanelView: View {
             }
         }
         .frame(width: 380)
-        .frame(minHeight: 280)
         .animation(.easeOut(duration: 0.22), value: viewModel.selectedEventId != nil)
+        .animation(.easeOut(duration: 0.18), value: contentHeight)
         .onDisappear { viewModel.selectedEventId = nil }
     }
 }

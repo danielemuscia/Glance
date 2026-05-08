@@ -28,7 +28,7 @@ struct HeroLiveView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 18)
-        .padding(.vertical, 18)
+        .padding(.vertical, 26)
         .contentShape(Rectangle())
         .onTapGesture { onSelect() }
     }
@@ -97,7 +97,8 @@ struct HeroLiveView: View {
             return "NOW · ENDS IN \(mins)M"
         case .nextSoon:
             let mins = max(0, Int((event.startDate.timeIntervalSince(now) / 60).rounded(.up)))
-            return "STARTING IN \(mins)M"
+            let unit = mins == 1 ? "MINUTE" : "MINUTES"
+            return "STARTING IN \(mins) \(unit)"
         }
     }
 
