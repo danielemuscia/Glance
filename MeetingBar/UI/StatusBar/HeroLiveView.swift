@@ -97,7 +97,7 @@ struct HeroLiveView: View {
             return "NOW · ENDS IN \(mins)M"
         case .nextSoon:
             let mins = max(0, Int((event.startDate.timeIntervalSince(now) / 60).rounded(.up)))
-            return "NEXT · IN \(mins)M"
+            return "STARTING IN \(mins)M"
         }
     }
 

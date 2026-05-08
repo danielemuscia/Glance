@@ -96,7 +96,7 @@ struct PeekRowView: View {
             .opacity(rowOpacity)
         }
         .buttonStyle(MenuItemStyle(isHovered: hovered, cornerRadius: 8))
-        .padding(.horizontal, 6)
+        .padding(.horizontal, 8)
         .contentShape(Rectangle())
         .onHover { hovered = $0 }
     }

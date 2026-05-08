@@ -9,8 +9,17 @@ struct MenuDropdownView: View {
 
     @State private var earlierExpanded = false
     @State private var moreExpanded = false
+    @Environment(\.colorScheme) private var scheme
 
     private var state: PanelState { PanelState.from(events: events) }
+
+    private var heroListDivider: some View {
+        Rectangle()
+            .fill(Color.mbStrokeSoft(scheme))
+            .frame(height: 0.5)
+            .padding(.horizontal, 14)
+            .padding(.bottom, 4)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -41,6 +50,7 @@ struct MenuDropdownView: View {
             VStack(spacing: 0) {
                 EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
                 HeroBetweenView(next: next)
+                heroListDivider
                 betweenList(next: next, more: more)
             }
 
@@ -53,7 +63,10 @@ struct MenuDropdownView: View {
                     onSelect: { selectedEventId = event.id },
                     onJoin: { event.openMeeting() }
                 )
-                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                if !more.isEmpty {
+                    heroListDivider
+                    MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                }
             }
 
         case .nextSoon(let event, let past, let more):
@@ -65,7 +78,10 @@ struct MenuDropdownView: View {
                     onSelect: { selectedEventId = event.id },
                     onJoin: { event.openMeeting() }
                 )
-                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                if !more.isEmpty {
+                    heroListDivider
+                    MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                }
             }
 
         case .conflict(let nowEvents, let past, let more):
@@ -76,7 +92,10 @@ struct MenuDropdownView: View {
                     onSelect: { selectedEventId = $0 },
                     onJoin: { $0.openMeeting() }
                 )
-                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                if !more.isEmpty {
+                    heroListDivider
+                    MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+                }
             }
         }
     }
