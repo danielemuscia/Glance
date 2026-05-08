@@ -55,15 +55,7 @@ struct PeekRowView: View {
                         .frame(width: 36, alignment: .leading)
                         .padding(.top, 2)
                 } else {
-                    if variant == .past {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 10, weight: .semibold))
-                            .foregroundColor(.glanceInk2)
-                            .frame(width: 36, alignment: .leading)
-                            .padding(.top, 2)
-                    } else {
-                        Color.clear.frame(width: 36, height: 1)
-                    }
+                    Color.clear.frame(width: 36, height: 1)
                 }
 
                 Text(timeString)
