@@ -9,20 +9,20 @@ struct BrandStripView: View {
     private var counts: DayCounts { DayCounts.from(events: today, now: now) }
 
     var body: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: Space.sm) {
             wordmark
             Spacer()
-            HStack(spacing: 10) {
+            HStack(spacing: Space.md) {
                 Text(daySummary)
-                    .font(.system(size: 11.5).monospacedDigit())
+                    .font(Typography.captionMono)
                     .foregroundColor(.glanceInk2)
                 if counts.total > 0 {
                     progressView
                 }
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 10)
+        .padding(.horizontal, Space.lg)
+        .padding(.vertical, Space.sm)
         .overlay(alignment: .bottom) {
             Rectangle()
                 .fill(Color.mbStrokeSoft(scheme))
@@ -31,9 +31,9 @@ struct BrandStripView: View {
     }
 
     private var wordmark: some View {
-        HStack(alignment: .center, spacing: 6) {
+        HStack(alignment: .center, spacing: Space.xs + 2) {
             Text("Glance")
-                .font(.system(size: 13, weight: .semibold))
+                .font(Typography.subhead)
                 .tracking(-0.26)
                 .foregroundColor(.glanceInk1)
             Circle()
@@ -76,7 +76,7 @@ struct DotRowView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: Space.xs) {
             ForEach(0..<done, id: \.self) { _ in
                 Circle()
                     .fill(Color.glanceInk1.opacity(0.85))
@@ -109,7 +109,7 @@ struct CounterBarView: View {
     let scheme: ColorScheme
 
     var body: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: Space.sm) {
             HStack(spacing: 0) {
                 Text("\(done)")
                     .fontWeight(.semibold)
@@ -117,7 +117,7 @@ struct CounterBarView: View {
                 Text(" / \(total)")
                     .foregroundColor(.glanceInk2)
             }
-            .font(.system(size: 11.5).monospacedDigit())
+            .font(Typography.captionMono)
 
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 2)

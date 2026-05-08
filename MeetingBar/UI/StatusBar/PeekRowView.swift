@@ -46,10 +46,10 @@ struct PeekRowView: View {
 
     var body: some View {
         Button(action: onSelect) {
-            HStack(alignment: .top, spacing: 10) {
+            HStack(alignment: .top, spacing: Space.sm) {
                 if let label = inlineLabel {
                     Text(label)
-                        .font(.system(size: 10, weight: .semibold))
+                        .font(Typography.microLabel)
                         .tracking(0.5)
                         .foregroundColor(.glanceInk2)
                         .frame(width: 36, alignment: .leading)
@@ -59,7 +59,7 @@ struct PeekRowView: View {
                 }
 
                 Text(timeString)
-                    .font(.system(size: 12, weight: .medium).monospacedDigit())
+                    .font(Typography.bodySmMd.monospacedDigit())
                     .foregroundColor(variant == .past ? Color.mbText3(scheme) : .glanceInk2)
                     .strikethrough(isDeclined)
                     .frame(width: 46, alignment: .leading)
@@ -72,13 +72,13 @@ struct PeekRowView: View {
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(event.title)
-                        .font(.system(size: 13, weight: .medium))
+                        .font(Typography.body)
                         .foregroundColor(.glanceInk1)
                         .strikethrough(isDeclined)
                         .lineLimit(1)
                     if let subtitle {
                         Text(subtitle)
-                            .font(.system(size: 11.5))
+                            .font(Typography.caption)
                             .foregroundColor(.glanceInk2)
                             .lineLimit(1)
                     }
@@ -87,12 +87,12 @@ struct PeekRowView: View {
                 Spacer(minLength: 0)
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
-            .padding(.horizontal, 10)
+            .padding(.vertical, Space.sm)
+            .padding(.horizontal, Space.sm)
             .opacity(rowOpacity)
         }
-        .buttonStyle(MenuItemStyle(isHovered: hovered, cornerRadius: 8))
-        .padding(.horizontal, 8)
+        .buttonStyle(MenuItemStyle(isHovered: hovered, cornerRadius: Radius.md))
+        .padding(.horizontal, Space.sm)
         .contentShape(Rectangle())
         .onHover { hovered = $0 }
     }

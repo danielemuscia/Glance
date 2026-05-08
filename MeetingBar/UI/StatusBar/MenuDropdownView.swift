@@ -17,8 +17,8 @@ struct MenuDropdownView: View {
         Rectangle()
             .fill(Color.mbStrokeSoft(scheme))
             .frame(height: 0.5)
-            .padding(.horizontal, 14)
-            .padding(.bottom, 4)
+            .padding(.horizontal, Space.lg)
+            .padding(.bottom, Space.xs)
     }
 
     var body: some View {

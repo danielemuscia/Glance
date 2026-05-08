@@ -9,44 +9,32 @@ struct HeroConflictView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            eyebrow
+        VStack(alignment: .leading, spacing: Space.md) {
+            EyebrowView(text: "CONFLICT · \(events.count) MEETINGS NOW", style: .danger)
             Text("Pick one to join.")
-                .font(.system(size: 22, weight: .bold))
+                .font(Typography.display)
                 .foregroundColor(.glanceInk1)
-            VStack(spacing: 8) {
+            VStack(spacing: Space.sm) {
                 ForEach(events) { event in
                     card(for: event)
                 }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, 18)
-        .padding(.vertical, 18)
-    }
-
-    private var eyebrow: some View {
-        HStack(spacing: 6) {
-            Circle()
-                .fill(Color.glanceDanger)
-                .frame(width: 8, height: 8)
-            Text("CONFLICT · \(events.count) MEETINGS NOW")
-                .font(.system(size: 11, weight: .semibold))
-                .tracking(0.5)
-                .foregroundColor(.glanceDanger)
-        }
+        .padding(.horizontal, Space.lg)
+        .padding(.vertical, Space.xxl)
     }
 
     private func card(for event: MBEvent) -> some View {
-        HStack(alignment: .top, spacing: 10) {
+        HStack(alignment: .top, spacing: Space.sm) {
             ServiceMarkView(service: event.meetingLink?.service, size: 28)
             VStack(alignment: .leading, spacing: 2) {
                 Text(event.title)
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(Typography.subhead)
                     .foregroundColor(.glanceInk1)
                     .lineLimit(1)
                 Text(metaString(for: event))
-                    .font(.system(size: 11.5).monospacedDigit())
+                    .font(Typography.captionMono)
                     .foregroundColor(.glanceInk2)
                     .lineLimit(1)
             }
@@ -54,22 +42,22 @@ struct HeroConflictView: View {
             if event.meetingLink != nil {
                 Button { onJoin(event) } label: {
                     Text("Join")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(Typography.body)
                         .foregroundColor(.white)
-                        .padding(.vertical, 7)
-                        .padding(.horizontal, 14)
+                        .padding(.vertical, Space.sm)
+                        .padding(.horizontal, Space.lg)
                         .background(Color.glanceAccent)
-                        .cornerRadius(7)
+                        .cornerRadius(Radius.md)
                 }
                 .buttonStyle(.plain)
             }
         }
-        .padding(12)
+        .padding(Space.md)
         .background(
-            RoundedRectangle(cornerRadius: 10).fill(Color.mbHeroBg(scheme))
+            RoundedRectangle(cornerRadius: Radius.lg).fill(Color.mbHeroBg(scheme))
         )
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: Radius.lg)
                 .stroke(Color.mbStroke(scheme), lineWidth: 0.5)
         )
         .contentShape(Rectangle())

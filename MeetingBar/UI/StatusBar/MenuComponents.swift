@@ -1,11 +1,5 @@
-// MenuComponents.swift — Shared UI primitives: Avatar, ServiceMark, Separator, SectionHeader, ActionRow
+// MenuComponents.swift — Shared UI primitives: Avatar, ServiceMark, MenuItemStyle, EmptyStateView.
 import SwiftUI
-
-struct HideScrollBackground: ViewModifier {
-    func body(content: Content) -> some View {
-        content.scrollContentBackground(.hidden)
-    }
-}
 
 // MARK: - Avatar
 
@@ -155,52 +149,13 @@ struct ServiceMarkView: View {
     }
 }
 
-// MARK: - Separator
-
-struct MenuSeparator: View {
-    @Environment(\.colorScheme) private var scheme
-
-    var body: some View {
-        Rectangle()
-            .fill(Color.mbStroke(scheme))
-            .frame(height: 0.5)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-    }
-}
-
-// MARK: - Section header
-
-struct SectionHeaderView: View {
-    let title: String
-    var sub: String? = nil
-    @Environment(\.colorScheme) private var scheme
-
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(title)
-                .font(.system(size: 12.5, weight: .medium))
-                .foregroundColor(Color.glanceInk2)
-            Spacer()
-            if let sub {
-                Text(sub)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color.glanceInk2)
-            }
-        }
-        .padding(.horizontal, 14)
-        .padding(.top, 10)
-        .padding(.bottom, 4)
-    }
-}
-
 // MARK: - Menu item button style
 // Matches native macOS menu/Control-Center row interaction:
 //   normal → transparent, hovered → subtle fill, pressed → accent tint.
 
 struct MenuItemStyle: ButtonStyle {
     var isHovered: Bool = false
-    var cornerRadius: CGFloat = 7
+    var cornerRadius: CGFloat = Radius.md
     @Environment(\.colorScheme) private var scheme
 
     func makeBody(configuration: Configuration) -> some View {
@@ -231,29 +186,29 @@ struct EmptyStateView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: Space.sm) {
             Image(systemName: "calendar.badge.exclamationmark")
                 .font(.system(size: 28, weight: .light))
                 .foregroundColor(Color.mbText3(scheme))
-            VStack(spacing: 3) {
+            VStack(spacing: Space.xs) {
                 Text("No calendar connected")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(Typography.subhead)
                     .foregroundColor(Color.glanceInk1)
                 Text("Connect a calendar to see your meetings here.")
-                    .font(.system(size: 12))
+                    .font(Typography.bodySm)
                     .foregroundColor(Color.glanceInk2)
                     .multilineTextAlignment(.center)
             }
             if let primaryAction {
                 Button(primaryAction.label, action: primaryAction.action)
                     .buttonStyle(.plain)
-                    .font(.system(size: 12, weight: .medium))
+                    .font(Typography.bodySmMd)
                     .foregroundColor(.glanceAccentText)
                     .padding(.top, 2)
             }
         }
-        .padding(.vertical, 28)
-        .padding(.horizontal, 20)
+        .padding(.vertical, Space.xxl + Space.xs)
+        .padding(.horizontal, Space.xl)
         .frame(maxWidth: .infinity)
     }
 }

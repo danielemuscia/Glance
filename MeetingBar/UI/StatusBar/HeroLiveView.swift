@@ -13,51 +13,39 @@ struct HeroLiveView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            eyebrow
+        VStack(alignment: .leading, spacing: Space.sm) {
+            EyebrowView(text: eyebrowText, style: eyebrowStyle)
             Text(event.title)
-                .font(.system(size: 22, weight: .bold))
+                .font(Typography.display)
                 .foregroundColor(.glanceInk1)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
             metaRow
             if event.meetingLink != nil {
                 joinButton
-                    .padding(.top, 4)
+                    .padding(.top, Space.xs)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, 18)
-        .padding(.vertical, 26)
+        .padding(.horizontal, Space.lg)
+        .padding(.vertical, Space.xxl)
         .contentShape(Rectangle())
         .onTapGesture { onSelect() }
     }
 
-    private var eyebrow: some View {
-        HStack(spacing: 6) {
-            Circle()
-                .fill(eyebrowDotColor)
-                .frame(width: 8, height: 8)
-            Text(eyebrowText)
-                .font(.system(size: 11, weight: .semibold))
-                .tracking(0.5)
-                .foregroundColor(eyebrowTextColor)
-        }
-    }
-
     private var metaRow: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: Space.sm) {
             if event.meetingLink != nil {
                 ServiceMarkView(service: event.meetingLink?.service, size: 22)
             }
             Text(timeRange)
-                .font(.system(size: 12).monospacedDigit())
+                .font(Typography.bodySmMono)
                 .foregroundColor(.glanceInk2)
                 .fixedSize()
             if let serviceLabel {
                 Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
                 Text(serviceLabel)
-                    .font(.system(size: 12))
+                    .font(Typography.bodySm)
                     .foregroundColor(.glanceInk2)
             } else if let room {
                 Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
@@ -65,13 +53,13 @@ struct HeroLiveView: View {
                     Image(systemName: "mappin").font(.system(size: 10))
                     Text(room)
                 }
-                .font(.system(size: 12))
+                .font(Typography.bodySm)
                 .foregroundColor(.glanceInk2)
             }
             if event.attendees.count > 0 {
                 Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
                 Text(attendeesLabel)
-                    .font(.system(size: 12))
+                    .font(Typography.bodySm)
                     .foregroundColor(.glanceInk2)
             }
             Spacer(minLength: 0)
@@ -81,17 +69,17 @@ struct HeroLiveView: View {
 
     private var joinButton: some View {
         Button(action: onJoin) {
-            HStack(spacing: 6) {
+            HStack(spacing: Space.xs + 2) {
                 Image(systemName: "play.fill")
                     .font(.system(size: 11, weight: .semibold))
                 Text("Join meeting")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(Typography.subhead)
             }
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
+            .padding(.vertical, Space.md)
             .background(Color.glanceAccent)
-            .cornerRadius(10)
+            .cornerRadius(Radius.lg)
         }
         .buttonStyle(.plain)
     }
@@ -110,12 +98,8 @@ struct HeroLiveView: View {
         }
     }
 
-    private var eyebrowDotColor: Color {
-        mode == .live ? Color.glanceAccent : Color.glanceInk2
-    }
-
-    private var eyebrowTextColor: Color {
-        mode == .live ? Color.glanceAccentText : Color.glanceInk2
+    private var eyebrowStyle: EyebrowStyle {
+        mode == .live ? .live : .neutral
     }
 
     private var timeRange: String {

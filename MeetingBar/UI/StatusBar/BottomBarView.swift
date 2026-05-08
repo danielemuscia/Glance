@@ -8,12 +8,12 @@ struct BottomBarView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            FooterButton(label: "+ New event", action: onNewEvent)
+            FooterButton(label: "+ Create meeting", action: onNewEvent)
             Spacer()
             FooterButton(label: "Preferences", action: onPreferences)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 10)
+        .padding(.horizontal, Space.lg)
+        .padding(.vertical, Space.sm)
         .overlay(alignment: .top) {
             Rectangle()
                 .fill(Color.mbStrokeSoft(scheme))
@@ -31,10 +31,10 @@ private struct FooterButton: View {
     var body: some View {
         Button(action: action) {
             Text(label)
-                .font(.system(size: 12.5, weight: .medium))
+                .font(Typography.body)
                 .foregroundColor(hovered ? .glanceInk1 : .glanceInk2)
-                .padding(.vertical, 4)
-                .padding(.horizontal, 4)
+                .padding(.vertical, Space.xs)
+                .padding(.horizontal, Space.xs)
         }
         .buttonStyle(.plain)
         .contentShape(Rectangle())

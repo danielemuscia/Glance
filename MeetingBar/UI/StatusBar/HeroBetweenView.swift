@@ -6,37 +6,25 @@ struct HeroBetweenView: View {
     var now: Date = Date()
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            eyebrow
+        VStack(alignment: .leading, spacing: Space.sm) {
+            EyebrowView(text: "BETWEEN MEETINGS", style: .neutral)
             title
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, 18)
-        .padding(.vertical, 18)
-    }
-
-    private var eyebrow: some View {
-        HStack(spacing: 6) {
-            Circle()
-                .stroke(Color.glanceInk2.opacity(0.45), lineWidth: 1)
-                .frame(width: 8, height: 8)
-            Text("BETWEEN MEETINGS")
-                .font(.system(size: 11, weight: .semibold))
-                .tracking(0.5)
-                .foregroundColor(.glanceInk2)
-        }
+        .padding(.horizontal, Space.lg)
+        .padding(.vertical, Space.xxl)
     }
 
     private var title: some View {
         HStack(spacing: 0) {
             Text("You're free until ")
-                .font(.system(size: 22, weight: .bold))
+                .font(Typography.display)
                 .foregroundColor(.glanceInk1)
             Text(timeString)
-                .font(.system(size: 22, weight: .bold).monospacedDigit())
+                .font(Typography.display.monospacedDigit())
                 .foregroundColor(.glanceAccent)
             Text(".")
-                .font(.system(size: 22, weight: .bold))
+                .font(Typography.display)
                 .foregroundColor(.glanceInk1)
         }
         .lineLimit(1)

@@ -12,17 +12,17 @@ struct AccordionDisclosure: View {
         Button {
             expanded.toggle()
         } label: {
-            HStack(spacing: 8) {
+            HStack(spacing: Space.sm) {
                 Image(systemName: expanded ? "chevron.up" : "chevron.down")
-                    .font(.system(size: 10, weight: .semibold))
+                    .font(Typography.microLabel)
                     .foregroundColor(.glanceInk2)
                 Text("\(count) \(label)")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(Typography.bodySmMd)
                     .foregroundColor(.glanceInk2)
                 Spacer()
             }
-            .padding(.vertical, 8)
-            .padding(.horizontal, 14)
+            .padding(.vertical, Space.sm)
+            .padding(.horizontal, Space.lg)
             .background(
                 Rectangle().fill(hovered ? Color.mbHover(scheme) : .clear)
             )

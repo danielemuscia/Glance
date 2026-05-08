@@ -52,17 +52,17 @@ private struct MoreTodayToggle: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 8) {
+            HStack(spacing: Space.sm) {
                 Text(label)
-                    .font(.system(size: 13, weight: .medium))
+                    .font(Typography.body)
                     .foregroundColor(.glanceInk1)
                 Spacer()
                 Image(systemName: systemImage)
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(Typography.eyebrow)
                     .foregroundColor(.glanceInk2)
             }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 14)
+            .padding(.vertical, Space.sm)
+            .padding(.horizontal, Space.lg)
             .background(Rectangle().fill(hovered ? Color.mbHover(scheme) : .clear))
         }
         .buttonStyle(.plain)
