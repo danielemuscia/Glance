@@ -59,6 +59,14 @@ struct HeroLiveView: View {
                 Text(serviceLabel)
                     .font(.system(size: 12))
                     .foregroundColor(.glanceInk2)
+            } else if let room {
+                Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
+                HStack(spacing: 3) {
+                    Image(systemName: "mappin").font(.system(size: 10))
+                    Text(room)
+                }
+                .font(.system(size: 12))
+                .foregroundColor(.glanceInk2)
             }
             if event.attendees.count > 0 {
                 Text("·").foregroundColor(Color.glanceInk2.opacity(0.5))
@@ -119,6 +127,12 @@ struct HeroLiveView: View {
 
     private var serviceLabel: String? {
         event.meetingLink?.service?.rawValue
+    }
+
+    private var room: String? {
+        guard let location = event.location?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !location.isEmpty else { return nil }
+        return location
     }
 
     private var attendeesLabel: String {

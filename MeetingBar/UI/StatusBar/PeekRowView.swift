@@ -34,6 +34,10 @@ struct PeekRowView: View {
         if let service = event.meetingLink?.service {
             return service.rawValue
         }
+        if let location = event.location?.trimmingCharacters(in: .whitespacesAndNewlines),
+           !location.isEmpty {
+            return location
+        }
         if event.attendees.isEmpty {
             return "Solo"
         }
