@@ -109,13 +109,9 @@ final class StatusBarItemController {
 
     func setAppDelegate(appdelegate: AppDelegate) {
         self.appdelegate = appdelegate
-        menuModel.onJoinNext = { [weak self] in self?.joinNextMeeting() }
         menuModel.onCreateMeeting = { createMeeting() }
         menuModel.onOpenPreferences = { [weak appdelegate] in
             Task { @MainActor in appdelegate?.openPreferencesWindow(nil) }
-        }
-        menuModel.onReload = { [weak appdelegate] in
-            Task { try await appdelegate?.eventManager.refreshSources() }
         }
     }
 

@@ -1,168 +1,93 @@
-// MenuDropdownView.swift
-// NO animations, NO withAnimation. State changes are instant.
 import SwiftUI
-import Defaults
-import KeyboardShortcuts
 
 struct MenuDropdownView: View {
     let events: [MBEvent]
-    var density: DensityPreset = .comfortable
-    var showNotes: Bool = true
     @Binding var selectedEventId: String?
 
-    var onJoinNext:      () -> Void
     var onCreateMeeting: () -> Void
-    var onPreferences:   () -> Void
-    var onQuit:          () -> Void
-    var onReload:        () -> Void
+    var onPreferences: () -> Void
 
-    // MARK: - Derived lists
+    @State private var earlierExpanded = false
+    @State private var moreExpanded = false
 
-    private var nowEvents: [MBEvent] {
-        let now = Date()
-        return events.filter { $0.startDate <= now && $0.endDate > now }
-                     .sorted { $0.startDate < $1.startDate }
-    }
-
-    private var upcomingEvents: [MBEvent] {
-        let now = Date()
-        return events.filter { $0.startDate > now && visible($0) }
-                     .sorted { $0.startDate < $1.startDate }
-    }
-
-    private var pastEvents: [MBEvent] {
-        let now = Date()
-        return events.filter { $0.endDate <= now && visible($0) }
-                     .sorted { $0.startDate < $1.startDate }
-    }
-
-    private func visible(_ e: MBEvent) -> Bool {
-        if (e.participationStatus == .declined || e.status == .canceled),
-           Defaults[.declinedEventsAppereance] == .hide { return false }
-        if e.endDate < Date(), Defaults[.pastEventsAppereance] == .hide { return false }
-        if e.attendees.isEmpty, Defaults[.personalEventsAppereance] == .hide { return false }
-        return true
-    }
-
-    // MARK: - Body
+    private var state: PanelState { PanelState.from(events: events) }
 
     var body: some View {
         VStack(spacing: 0) {
-            headerRow
-            eventsSection
-            if !Defaults[.bookmarks].isEmpty {
-                MenuSeparator()
-                bookmarksSection
-            }
-            MenuSeparator()
-            ActionRowView(icon: "video", label: "Join next event meeting", kbd: kbd(for: .joinEventShortcut), action: onJoinNext)
-            ActionRowView(icon: "plus", label: "Create meeting", kbd: kbd(for: .createMeetingShortcut), action: onCreateMeeting)
-            MenuSeparator()
-            ActionRowView(icon: "gear", label: "Preferences…", kbd: "⌘,", action: onPreferences)
-            ActionRowView(icon: "power", label: "status_bar_quit".loco(), kbd: "⌘Q", action: onQuit)
-            Spacer(minLength: 6)
+            BrandStripView(events: events)
+            content
         }
     }
-
-    // MARK: - Header
-
-    private var headerRow: some View {
-        HStack {
-            Text(Date().formatted(.dateTime.weekday(.wide).month(.abbreviated).day()))
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(Color.glanceInk1)
-            Spacer()
-            IconButtonView(systemName: "arrow.clockwise", action: onReload)
-        }
-        .padding(.horizontal, 10)
-        .padding(.top, 12)
-        .padding(.bottom, 6)
-    }
-
-    // MARK: - Events
 
     @ViewBuilder
-    private var eventsSection: some View {
-        if Defaults[.selectedCalendarIDs].isEmpty {
-            EmptyStateView(kind: .noCalendarConnected, primaryAction: ("Open Preferences", onPreferences))
-        } else {
-            if nowEvents.count >= 2 {
-                ConflictHeroView(
+    private var content: some View {
+        switch state {
+        case .noCalendar:
+            EmptyStateView(
+                kind: .noCalendarConnected,
+                primaryAction: ("Open Preferences", onPreferences)
+            )
+
+        case .empty:
+            HeroEmptyView()
+
+        case .wrappedUp(let past):
+            VStack(spacing: 0) {
+                EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
+                HeroWrappedView(doneCount: past.count)
+            }
+
+        case .between(let next, let past, let more):
+            VStack(spacing: 0) {
+                EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
+                HeroBetweenView(next: next)
+                betweenList(next: next, more: more)
+            }
+
+        case .live(let event, let past, let more):
+            VStack(spacing: 0) {
+                EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
+                HeroLiveView(
+                    event: event,
+                    mode: .live,
+                    onSelect: { selectedEventId = event.id },
+                    onJoin: { event.openMeeting() }
+                )
+                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+            }
+
+        case .nextSoon(let event, let past, let more):
+            VStack(spacing: 0) {
+                EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
+                HeroLiveView(
+                    event: event,
+                    mode: .nextSoon,
+                    onSelect: { selectedEventId = event.id },
+                    onJoin: { event.openMeeting() }
+                )
+                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
+            }
+
+        case .conflict(let nowEvents, let past, let more):
+            VStack(spacing: 0) {
+                EarlierTodayList(events: past, expanded: $earlierExpanded) { selectedEventId = $0 }
+                HeroConflictView(
                     events: nowEvents,
-                    density: density,
-                    selectedEventId: selectedEventId,
-                    onSelect: { toggle($0) }
+                    onSelect: { selectedEventId = $0 },
+                    onJoin: { $0.openMeeting() }
                 )
-            } else if let now = nowEvents.first {
-                HeroCardView(
-                    event: now,
-                    density: density,
-                    selected: selectedEventId == now.id,
-                    onSelect: { toggle(now.id) }
-                )
-            }
-
-            if !upcomingEvents.isEmpty {
-                SectionHeaderView(
-                    title: "Up next",
-                    sub: "\(upcomingEvents.count) \(upcomingEvents.count == 1 ? "event" : "events")"
-                )
-                ForEach(upcomingEvents) { event in
-                    EventRowView(
-                        event: event,
-                        density: density,
-                        showNotes: showNotes,
-                        selected: selectedEventId == event.id,
-                        onSelect: { toggle(event.id) }
-                    )
-                }
-            }
-
-            if nowEvents.isEmpty && upcomingEvents.isEmpty {
-                EmptyStateView(kind: .allClear)
-            }
-
-            if !pastEvents.isEmpty {
-                Spacer().frame(height: 6)
-                SectionHeaderView(title: "Earlier today")
-                ForEach(pastEvents) { event in
-                    EventRowView(
-                        event: event,
-                        density: density,
-                        showNotes: showNotes,
-                        selected: selectedEventId == event.id,
-                        onSelect: { toggle(event.id) }
-                    )
-                }
+                MoreTodayList(events: more, expanded: $moreExpanded) { selectedEventId = $0 }
             }
         }
     }
 
-    // MARK: - Bookmarks
-
-    private var bookmarksSection: some View {
-        Group {
-            SectionHeaderView(title: "Bookmarks")
-            ForEach(Defaults[.bookmarks], id: \.name) { bookmark in
-                ActionRowView(icon: "bookmark", label: bookmark.name) {
-                    openMeetingURL(bookmark.service, bookmark.url, nil)
-                }
-            }
-        }
-    }
-
-    // MARK: - Helpers
-
-    private func kbd(for name: KeyboardShortcuts.Name) -> String? {
-        KeyboardShortcuts.getShortcut(for: name)?.description
-    }
-
-    // MARK: - Toggle
-
-    private func toggle(_ id: String) {
-        // withAnimation is safe here: the window never resizes (ZStack overlay approach),
-        // so there's no layout shake. The parent ZStack's .animation(value:) drives the
-        // transition; this call keeps selection state in sync.
-        selectedEventId = (selectedEventId == id) ? nil : id
+    /// Between has a special list shape: when the count of upcoming events is 1
+    /// (just the `next`), the list is collapsed-by-default into a single peek row;
+    /// when there are multiple upcoming events we surface them as a normal MoreTodayList
+    /// where the first row carries the inline NEXT label.
+    @ViewBuilder
+    private func betweenList(next: MBEvent, more: [MBEvent]) -> some View {
+        let upcoming = [next] + more
+        MoreTodayList(events: upcoming, expanded: $moreExpanded) { selectedEventId = $0 }
     }
 }

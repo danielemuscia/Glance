@@ -219,52 +219,11 @@ struct MenuItemStyle: ButtonStyle {
     }
 }
 
-// MARK: - Action row
-
-struct ActionRowView: View {
-    let icon: String
-    let label: String
-    var kbd: String? = nil
-    var danger: Bool = false
-    var action: (() -> Void)?
-
-    @Environment(\.colorScheme) private var scheme
-    @State private var hovered = false
-
-    var body: some View {
-        Button { action?() } label: {
-            HStack(spacing: 12) {
-                Image(systemName: icon)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.glanceInk1)
-                    .frame(width: 20, alignment: .center)
-                Text(label)
-                    .font(.system(size: 13))
-                    .foregroundColor(danger ? Color.glanceDanger : Color.glanceInk1)
-                Spacer()
-                if let kbd {
-                    Text(kbd)
-                        .font(.system(size: 11.5))
-                        .foregroundColor(Color.mbText3(scheme))
-                }
-            }
-            .padding(.vertical, 9)
-            .padding(.horizontal, 8)
-        }
-        .buttonStyle(MenuItemStyle(isHovered: hovered))
-        .padding(.horizontal, 6)   // insets the rounded-rect highlight from container edges
-        .contentShape(Rectangle())
-        .onHover { hovered = $0 }
-    }
-}
-
-// MARK: - Empty state
+// MARK: - Empty state (only for noCalendarConnected; the "all clear" / today states
+// live in dedicated Hero* views).
 
 struct EmptyStateView: View {
-    enum Kind {
-        case noCalendarConnected
-        case allClear
-    }
+    enum Kind { case noCalendarConnected }
 
     let kind: Kind
     var primaryAction: (label: String, action: () -> Void)? = nil
@@ -272,40 +231,6 @@ struct EmptyStateView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        switch kind {
-        case .allClear:
-            allClearBody
-        case .noCalendarConnected:
-            noCalendarBody
-        }
-    }
-
-    private var allClearBody: some View {
-        VStack(spacing: 14) {
-            ZStack {
-                Circle()
-                    .fill(Color.secondary.opacity(scheme == .dark ? 0.18 : 0.12))
-                    .frame(width: 64, height: 64)
-                Image(systemName: "checkmark")
-                    .font(.system(size: 24, weight: .medium))
-                    .foregroundColor(Color.secondary.opacity(0.6))
-            }
-            VStack(spacing: 5) {
-                Text("All done for today")
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(Color.glanceInk1)
-                Text("No more meetings on your calendar.")
-                    .font(.system(size: 12.5))
-                    .foregroundColor(Color.glanceInk2)
-                    .multilineTextAlignment(.center)
-            }
-        }
-        .padding(.vertical, 36)
-        .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity)
-    }
-
-    private var noCalendarBody: some View {
         VStack(spacing: 10) {
             Image(systemName: "calendar.badge.exclamationmark")
                 .font(.system(size: 28, weight: .light))
@@ -333,26 +258,3 @@ struct EmptyStateView: View {
     }
 }
 
-// MARK: - Icon button (header toolbar)
-
-struct IconButtonView: View {
-    let systemName: String
-    var action: () -> Void
-    @Environment(\.colorScheme) private var scheme
-    @State private var hovered = false
-
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundColor(hovered ? Color.glanceInk1 : Color.glanceInk2)
-                .frame(width: 26, height: 26)
-                .background(
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(hovered ? Color.mbHover(scheme) : .clear)
-                )
-        }
-        .buttonStyle(.plain)
-        .onHover { hovered = $0 }
-    }
-}
