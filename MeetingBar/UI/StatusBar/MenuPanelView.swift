@@ -50,7 +50,9 @@ struct MenuPanelView: View {
                     onPreferences: { viewModel.openPreferences() }
                 )
             }
-            .onPreferenceChange(ContentHeightKey.self) { contentHeight = $0 }
+            .onPreferenceChange(ContentHeightKey.self) { newValue in
+                Task { @MainActor in contentHeight = newValue }
+            }
 
             if let event = viewModel.selectedEvent {
                 DetailPanelView(
