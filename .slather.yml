@@ -1,0 +1,19 @@
+scheme: MeetingBar
+source_directory: MeetingBar
+output_directory: build/coverage
+xcodeproj: MeetingBar.xcodeproj
+
+# Exclude files that are structurally untestable:
+# - AppDelegate: requires NSApplication lifecycle
+# - MeetingBarApp: SwiftUI @main entry point
+# - AppStore: SwiftyStoreKit singleton
+# - EKEventStore: requires EventKit system permission
+# - GCEventStore: OAuth round-trip requires live Google auth
+# - UI/**:  SwiftUI views (visual layout not testable in unit tests)
+ignore:
+  - "MeetingBar/App/AppDelegate.swift"
+  - "MeetingBar/App/MeetingBarApp.swift"
+  - "MeetingBar/App/AppStore.swift"
+  - "MeetingBar/Core/EventStores/EKEventStore.swift"
+  - "MeetingBar/Core/EventStores/GCEventStore.swift"
+  - "MeetingBar/UI/**"

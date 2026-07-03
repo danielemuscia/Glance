@@ -18,6 +18,8 @@ final class MenuViewModel: ObservableObject {
 
     var onCreateMeeting: (() -> Void)?
     var onOpenPreferences: (() -> Void)?
+    var onJoinNext: (() -> Void)?
+    var onReload: (() -> Void)?
 
     var selectedEvent: MBEvent? {
         guard let id = selectedEventId else { return nil }
@@ -31,4 +33,6 @@ final class MenuViewModel: ObservableObject {
 
     func createMeeting() { onCreateMeeting?() }
     func openPreferences() { onOpenPreferences?() }
+    func joinNextMeeting() { onJoinNext?() }
+    func reload() { onReload?() }
 }

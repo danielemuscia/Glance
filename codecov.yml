@@ -1,0 +1,13 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 75%
+        threshold: 2%   # allow up to 2% drop before failing PR
+    patch:
+      default:
+        target: 80%     # new code in a PR must be 80% covered
+
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default

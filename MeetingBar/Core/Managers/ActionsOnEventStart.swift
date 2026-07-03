@@ -10,12 +10,19 @@ import Defaults
 import Foundation
 
 @MainActor
+protocol ActionsOnEventStartContext: AnyObject {
+    var screenIsLocked: Bool { get }
+    var nextEventWithLink: MBEvent? { get }
+    func openFullscreenNotificationWindow(event: MBEvent)
+}
+
+@MainActor
 class ActionsOnEventStart: NSObject {
-    var app: AppDelegate
+    var context: ActionsOnEventStartContext
     var timer: Timer?
 
-    init(_ appDelegate: AppDelegate) {
-        app = appDelegate
+    init(_ context: ActionsOnEventStartContext) {
+        self.context = context
     }
 
     func startWatching() {
@@ -30,9 +37,9 @@ class ActionsOnEventStart: NSObject {
      * - All day events will be reported the first time when the current time is within the timeframe of the allday event (which can be several days).
      */
     @objc
-    private func checkNextEvent() {
+    func checkNextEvent() {
         // Only run if screen is not locked
-        if app.screenIsLocked {
+        if context.screenIsLocked {
             return
         }
 
@@ -51,7 +58,7 @@ class ActionsOnEventStart: NSObject {
         }
         //
 
-        if let nextEvent = app.statusBarItem.events.nextEvent(linkRequired: true) {
+        if let nextEvent = context.nextEventWithLink {
             let now = Date()
 
             let startEndRange = nextEvent.startDate ... nextEvent.endDate
@@ -78,7 +85,7 @@ class ActionsOnEventStart: NSObject {
                 // this is an edge case when the event was already notified for, but scheduled for a later time.
                 if matchedEvent == nil || matchedEvent?.lastModifiedDate != nextEvent.lastModifiedDate {
                     if nextEvent.meetingLink != nil {
-                        app.openFullscreenNotificationWindow(event: nextEvent)
+                        context.openFullscreenNotificationWindow(event: nextEvent)
                     }
 
                     // update the executed events

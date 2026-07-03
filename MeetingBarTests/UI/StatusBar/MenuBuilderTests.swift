@@ -10,10 +10,11 @@ import XCTest
 import Defaults
 @testable import MeetingBar
 
+// Shared target object used as selector host by all MenuBuilder test classes
+fileprivate class Dummy: NSObject {}
+
 @MainActor
 final class MenuBuilderTests: BaseTestCase {
-    private class Dummy: NSObject {}
-
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "E, d MMM"
@@ -79,10 +80,10 @@ final class MenuBuilderTests: BaseTestCase {
 
         // --- Assert ------------------------------------------------------------------
         XCTAssertTrue(titles.contains(where: { $0.contains("status_bar_whats_new".loco()) }),
-                      "Should show “What's New” when appVersion > changelogVersion")
+                      "Should show What's New when appVersion > changelogVersion")
 
         XCTAssertTrue(titles.contains(where: { $0.contains("status_bar_rate_app".loco()) }),
-                      "Should show “Rate App” button after two weeks")
+                      "Should show Rate App button after two weeks")
 
         XCTAssertEqual(items.last?.action,
                        #selector(AppDelegate.quit),
@@ -143,7 +144,7 @@ final class MenuBuilderTests: BaseTestCase {
                                              title: "Today", events: [e1, e2])
         allItems += builder.buildJoinSection(nextEvent: e1)
 
-        // “Snapshot”: порівнюємо plain-titles з еталоном
+        // Compare plain titles against expected snapshot
         let snapshot = MenuBuilder.plainTitles(of: allItems)
         XCTAssertEqual(snapshot, [
             "Today (\(dateFormatter.string(from: today))):",
@@ -158,11 +159,6 @@ final class MenuBuilderTests: BaseTestCase {
 
 @MainActor
 final class MenuBuilderEventItemTests: BaseTestCase {
-
-    // Dummy target that owns selector stubs
-    private class Dummy: NSObject {
-        @objc func stub() {}
-    }
 
     // MARK: – Helper ----------------------------------------------------------
 
@@ -257,13 +253,11 @@ final class MenuBuilderEventItemTests: BaseTestCase {
 @MainActor
 final class MenuBuilderQuickActionsTests: BaseTestCase {
 
-    private class Dummy: NSObject {}
-
     func test_quickActionsIncludesDismissRemove() {
         let next = makeFakeEvent(id: "Q",
                                  start: Date().addingTimeInterval(30),
                                  end: Date().addingTimeInterval(900))
-        // there is at least one dismissed event -> menu should add “Remove all”
+        // there is at least one dismissed event -> menu should add "Remove all"
         Defaults[.dismissedEvents] = [ProcessedEvent(id: "123", eventEndDate: Date())]
 
         let root = MenuBuilder(target: Dummy())

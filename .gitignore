@@ -12,3 +12,6 @@ MeetingBar.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/*
 
 Archive/*
 build
+
+# Claude Code local session state
+.claude/

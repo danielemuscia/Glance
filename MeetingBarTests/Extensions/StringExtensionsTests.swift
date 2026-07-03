@@ -160,3 +160,62 @@ class StringExtensionsTests: XCTestCase {
         }
     }
 }
+
+// MARK: - String extensions (non-link)
+
+class StringExtensionMethodsTests: XCTestCase {
+
+    // MARK: htmlTagsStripped
+
+    func test_htmlTagsStripped_withTags_removesTagsAndKeepsContent() {
+        let html = "<p>Hello <b>World</b></p>"
+        let stripped = html.htmlTagsStripped()
+        XCTAssertTrue(stripped.contains("Hello"))
+        XCTAssertTrue(stripped.contains("World"))
+        XCTAssertFalse(stripped.contains("<p>"))
+        XCTAssertFalse(stripped.contains("<b>"))
+    }
+
+    func test_htmlTagsStripped_withNoTags_returnsOriginal() {
+        let plain = "Just plain text"
+        XCTAssertEqual(plain.htmlTagsStripped(), plain)
+    }
+
+    // MARK: replacingFirstOccurrence
+
+    func test_replacingFirstOccurrence_replacesOnlyFirst() {
+        let input = "foo bar foo baz foo"
+        let result = input.replacingFirstOccurrence(of: "foo", with: "qux")
+        XCTAssertEqual(result, "qux bar foo baz foo")
+    }
+
+    func test_replacingFirstOccurrence_withNoMatch_returnsOriginal() {
+        let input = "hello world"
+        let result = input.replacingFirstOccurrence(of: "xyz", with: "abc")
+        XCTAssertEqual(result, "hello world")
+    }
+
+    // MARK: fileName
+
+    func test_fileName_extractsNameWithoutExtension() {
+        let path = "/Users/alice/Documents/report.pdf"
+        XCTAssertEqual(path.fileName(), "report")
+    }
+
+    func test_fileName_withNoExtension_returnsName() {
+        let path = "/tmp/Makefile"
+        XCTAssertEqual(path.fileName(), "Makefile")
+    }
+
+    // MARK: decodeUrl
+
+    func test_decodeUrl_decodesPercentEncoding() {
+        let encoded = "Hello%20World"
+        XCTAssertEqual(encoded.decodeUrl(), "Hello World")
+    }
+
+    func test_decodeUrl_withNoEncoding_returnsOriginal() {
+        let plain = "HelloWorld"
+        XCTAssertEqual(plain.decodeUrl(), "HelloWorld")
+    }
+}

@@ -113,6 +113,10 @@ final class StatusBarItemController {
         menuModel.onOpenPreferences = { [weak appdelegate] in
             Task { @MainActor in appdelegate?.openPreferencesWindow(nil) }
         }
+        menuModel.onJoinNext = { [weak self] in self?.joinNextMeeting() }
+        menuModel.onReload = { [weak appdelegate] in
+            Task { @MainActor in try? await appdelegate?.eventManager.refreshSources() }
+        }
     }
 
     // MARK: - Title state
