@@ -14,6 +14,13 @@ import UserNotifications
 
 @MainActor
 class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotificationCenterDelegate, ActionsOnEventStartContext {
+    // Direct reference to the live AppDelegate instance. Under the SwiftUI
+    // app lifecycle, `NSApplication.shared.delegate` returns SwiftUI's internal
+    // forwarding delegate — NOT this instance — so casting it to AppDelegate
+    // traps at runtime. Everything that needs the delegate uses this instead.
+    // Set at the very top of applicationDidFinishLaunching, before any UI.
+    static private(set) var shared: AppDelegate!
+
     // menuModel is created eagerly so MeetingBarApp can reference it in its body
     // before applicationDidFinishLaunching runs.
     var menuModel = MenuViewModel()
@@ -33,6 +40,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotifi
     private var eventCancellable: AnyCancellable?
 
     func applicationDidFinishLaunching(_: Notification) {
+        Self.shared = self
+
         // AppStore sync
         completeStoreTransactions()
         checkAppSource()

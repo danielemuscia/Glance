@@ -60,7 +60,7 @@ struct GetNearestEventDetails: AppIntent {
         // Hop to the main actor only for the AppKit interaction
         let value: String? = await MainActor.run {
             guard
-                let appDelegate = NSApplication.shared.delegate as? AppDelegate,
+                let appDelegate = AppDelegate.shared,
                 let nextEvent = appDelegate.statusBarItem.events.nextEvent()
             else { return nil }
 
@@ -89,7 +89,7 @@ struct JoinNearestMeetingIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
         await MainActor.run {
-            (NSApplication.shared.delegate as? AppDelegate)?
+            AppDelegate.shared?
                 .statusBarItem
                 .joinNextMeeting()
         }
@@ -104,7 +104,7 @@ struct DismissNearestMeetingIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
         await MainActor.run {
-            (NSApplication.shared.delegate as? AppDelegate)?
+            AppDelegate.shared?
                 .statusBarItem
                 .dismissNextMeetingAction()
         }

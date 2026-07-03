@@ -88,12 +88,11 @@ struct AccessScreen: View {
         providerSelected = true
 
         Defaults[.eventStoreProvider] = provider
-        if let app = NSApplication.shared.delegate as! AppDelegate? {
-            app.eventManager = await EventManager()
-            Defaults[.onboardingCompleted] = true
-            app.setup()
-            await app.eventManager.changeEventStoreProvider(Defaults[.eventStoreProvider])
-            self.viewRouter.currentScreen = .calendars
-        }
+        let app = AppDelegate.shared!
+        app.eventManager = await EventManager()
+        Defaults[.onboardingCompleted] = true
+        app.setup()
+        await app.eventManager.changeEventStoreProvider(Defaults[.eventStoreProvider])
+        self.viewRouter.currentScreen = .calendars
     }
 }
