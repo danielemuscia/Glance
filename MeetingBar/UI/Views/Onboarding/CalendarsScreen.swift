@@ -15,8 +15,7 @@ struct CalendarsScreen: View {
     let eventManager: EventManager
 
     init() {
-        let app = NSApplication.shared.delegate as! AppDelegate
-        eventManager = app.eventManager
+        eventManager = AppDelegate.shared.eventManager
     }
 
     var body: some View {
