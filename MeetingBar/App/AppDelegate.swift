@@ -13,7 +13,7 @@ import SwiftUI
 import UserNotifications
 
 @MainActor
-class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotificationCenterDelegate, ActionsOnEventStartContext {
     // menuModel is created eagerly so MeetingBarApp can reference it in its body
     // before applicationDidFinishLaunching runs.
     var menuModel = MenuViewModel()
@@ -22,6 +22,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, @preconcurrency UNUserNotifi
     var eventManager: EventManager!
 
     var screenIsLocked: Bool = false
+
+    var nextEventWithLink: MBEvent? {
+        statusBarItem.events.nextEvent(linkRequired: true)
+    }
 
     weak var preferencesWindow: NSWindow!
     private var statusLoopTask: Task<Void, Never>?

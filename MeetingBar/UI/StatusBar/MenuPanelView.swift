@@ -1,40 +1,59 @@
 // MenuPanelView.swift
-// Layout contract:
-//   • Window is always 380×640 — it never resizes. No blink from compositor.
-//   • The detail panel slides in as a ZStack overlay — no layout change.
-//   • ONE .animation(value:) on the ZStack drives the transition.
-//   • NO withAnimation at call sites, NO competing animation modifiers.
+// Width fixed 380. Height tracks the actual content (capped at 640 with scroll).
+// Sticky bottom bar lives outside the ScrollView so it never scrolls away.
 import SwiftUI
+
+private struct ContentHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
 
 struct MenuPanelView: View {
     @ObservedObject var viewModel: MenuViewModel
 
+    @State private var contentHeight: CGFloat = 0
+
+    private static let maxScrollHeight: CGFloat = 640
+
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Main menu — always rendered at full size, never moves.
-            ScrollViewReader { proxy in
-                ScrollView {
-                    VStack(spacing: 0) {
-                        Color.clear.frame(height: 0).id("top")
-                        MenuDropdownView(
-                            events:          viewModel.events,
-                            density:         viewModel.density,
-                            showNotes:       viewModel.showNotes,
-                            selectedEventId: $viewModel.selectedEventId,
-                            onJoinNext:      { viewModel.joinNextMeeting() },
-                            onCreateMeeting: { viewModel.createMeeting() },
-                            onPreferences:   { viewModel.openPreferences() },
-                            onQuit:          { NSApp.terminate(nil) },
-                            onReload:        { viewModel.reload() }
+            VStack(spacing: 0) {
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            Color.clear.frame(height: 0).id("top")
+                            MenuDropdownView(
+                                events: viewModel.events,
+                                selectedEventId: $viewModel.selectedEventId,
+                                onCreateMeeting: { viewModel.createMeeting() },
+                                onPreferences: { viewModel.openPreferences() }
+                            )
+                        }
+                        .background(
+                            GeometryReader { geo in
+                                Color.clear.preference(
+                                    key: ContentHeightKey.self,
+                                    value: geo.size.height
+                                )
+                            }
                         )
                     }
+                    .scrollContentBackground(.hidden)
+                    .frame(height: min(contentHeight, Self.maxScrollHeight))
+                    .onAppear { proxy.scrollTo("top", anchor: .top) }
                 }
-                .frame(width: 380)
-                .scrollContentBackground(.hidden)
-                .onAppear { proxy.scrollTo("top", anchor: .top) }
+
+                BottomBarView(
+                    onNewEvent: { viewModel.createMeeting() },
+                    onPreferences: { viewModel.openPreferences() }
+                )
+            }
+            .onPreferenceChange(ContentHeightKey.self) { newValue in
+                Task { @MainActor in contentHeight = newValue }
             }
 
-            // Detail panel — overlays the main menu; slides in/out from the left.
             if let event = viewModel.selectedEvent {
                 DetailPanelView(
                     event: event,
@@ -43,10 +62,9 @@ struct MenuPanelView: View {
                 .transition(.move(edge: .leading).combined(with: .opacity))
             }
         }
-        .frame(width: 380, height: 640)
+        .frame(width: 380)
         .animation(.easeOut(duration: 0.22), value: viewModel.selectedEventId != nil)
-        // Reset the detail selection whenever the panel is dismissed so the next
-        // open always starts at the main menu view.
+        .animation(.easeOut(duration: 0.18), value: contentHeight)
         .onDisappear { viewModel.selectedEventId = nil }
     }
 }

@@ -1,11 +1,5 @@
-// MenuComponents.swift — Shared UI primitives: Avatar, ServiceMark, Separator, SectionHeader, ActionRow
+// MenuComponents.swift — Shared UI primitives: Avatar, ServiceMark, MenuItemStyle, EmptyStateView.
 import SwiftUI
-
-struct HideScrollBackground: ViewModifier {
-    func body(content: Content) -> some View {
-        content.scrollContentBackground(.hidden)
-    }
-}
 
 // MARK: - Avatar
 
@@ -155,52 +149,13 @@ struct ServiceMarkView: View {
     }
 }
 
-// MARK: - Separator
-
-struct MenuSeparator: View {
-    @Environment(\.colorScheme) private var scheme
-
-    var body: some View {
-        Rectangle()
-            .fill(Color.mbStroke(scheme))
-            .frame(height: 0.5)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-    }
-}
-
-// MARK: - Section header
-
-struct SectionHeaderView: View {
-    let title: String
-    var sub: String? = nil
-    @Environment(\.colorScheme) private var scheme
-
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(title)
-                .font(.system(size: 12.5, weight: .medium))
-                .foregroundColor(Color.glanceInk2)
-            Spacer()
-            if let sub {
-                Text(sub)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color.glanceInk2)
-            }
-        }
-        .padding(.horizontal, 14)
-        .padding(.top, 10)
-        .padding(.bottom, 4)
-    }
-}
-
 // MARK: - Menu item button style
 // Matches native macOS menu/Control-Center row interaction:
 //   normal → transparent, hovered → subtle fill, pressed → accent tint.
 
 struct MenuItemStyle: ButtonStyle {
     var isHovered: Bool = false
-    var cornerRadius: CGFloat = 7
+    var cornerRadius: CGFloat = Radius.md
     @Environment(\.colorScheme) private var scheme
 
     func makeBody(configuration: Configuration) -> some View {
@@ -219,52 +174,11 @@ struct MenuItemStyle: ButtonStyle {
     }
 }
 
-// MARK: - Action row
-
-struct ActionRowView: View {
-    let icon: String
-    let label: String
-    var kbd: String? = nil
-    var danger: Bool = false
-    var action: (() -> Void)?
-
-    @Environment(\.colorScheme) private var scheme
-    @State private var hovered = false
-
-    var body: some View {
-        Button { action?() } label: {
-            HStack(spacing: 12) {
-                Image(systemName: icon)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.glanceInk1)
-                    .frame(width: 20, alignment: .center)
-                Text(label)
-                    .font(.system(size: 13))
-                    .foregroundColor(danger ? Color.glanceDanger : Color.glanceInk1)
-                Spacer()
-                if let kbd {
-                    Text(kbd)
-                        .font(.system(size: 11.5))
-                        .foregroundColor(Color.mbText3(scheme))
-                }
-            }
-            .padding(.vertical, 9)
-            .padding(.horizontal, 8)
-        }
-        .buttonStyle(MenuItemStyle(isHovered: hovered))
-        .padding(.horizontal, 6)   // insets the rounded-rect highlight from container edges
-        .contentShape(Rectangle())
-        .onHover { hovered = $0 }
-    }
-}
-
-// MARK: - Empty state
+// MARK: - Empty state (only for noCalendarConnected; the "all clear" / today states
+// live in dedicated Hero* views).
 
 struct EmptyStateView: View {
-    enum Kind {
-        case noCalendarConnected
-        case allClear
-    }
+    enum Kind { case noCalendarConnected }
 
     let kind: Kind
     var primaryAction: (label: String, action: () -> Void)? = nil
@@ -272,87 +186,30 @@ struct EmptyStateView: View {
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        switch kind {
-        case .allClear:
-            allClearBody
-        case .noCalendarConnected:
-            noCalendarBody
-        }
-    }
-
-    private var allClearBody: some View {
-        VStack(spacing: 14) {
-            ZStack {
-                Circle()
-                    .fill(Color.secondary.opacity(scheme == .dark ? 0.18 : 0.12))
-                    .frame(width: 64, height: 64)
-                Image(systemName: "checkmark")
-                    .font(.system(size: 24, weight: .medium))
-                    .foregroundColor(Color.secondary.opacity(0.6))
-            }
-            VStack(spacing: 5) {
-                Text("All done for today")
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(Color.glanceInk1)
-                Text("No more meetings on your calendar.")
-                    .font(.system(size: 12.5))
-                    .foregroundColor(Color.glanceInk2)
-                    .multilineTextAlignment(.center)
-            }
-        }
-        .padding(.vertical, 36)
-        .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity)
-    }
-
-    private var noCalendarBody: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: Space.sm) {
             Image(systemName: "calendar.badge.exclamationmark")
                 .font(.system(size: 28, weight: .light))
                 .foregroundColor(Color.mbText3(scheme))
-            VStack(spacing: 3) {
+            VStack(spacing: Space.xs) {
                 Text("No calendar connected")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(Typography.subhead)
                     .foregroundColor(Color.glanceInk1)
                 Text("Connect a calendar to see your meetings here.")
-                    .font(.system(size: 12))
+                    .font(Typography.bodySm)
                     .foregroundColor(Color.glanceInk2)
                     .multilineTextAlignment(.center)
             }
             if let primaryAction {
                 Button(primaryAction.label, action: primaryAction.action)
                     .buttonStyle(.plain)
-                    .font(.system(size: 12, weight: .medium))
+                    .font(Typography.bodySmMd)
                     .foregroundColor(.glanceAccentText)
                     .padding(.top, 2)
             }
         }
-        .padding(.vertical, 28)
-        .padding(.horizontal, 20)
+        .padding(.vertical, Space.xxl + Space.xs)
+        .padding(.horizontal, Space.xl)
         .frame(maxWidth: .infinity)
     }
 }
 
-// MARK: - Icon button (header toolbar)
-
-struct IconButtonView: View {
-    let systemName: String
-    var action: () -> Void
-    @Environment(\.colorScheme) private var scheme
-    @State private var hovered = false
-
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundColor(hovered ? Color.glanceInk1 : Color.glanceInk2)
-                .frame(width: 26, height: 26)
-                .background(
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(hovered ? Color.mbHover(scheme) : .clear)
-                )
-        }
-        .buttonStyle(.plain)
-        .onHover { hovered = $0 }
-    }
-}
